@@ -1,0 +1,13 @@
+[build]
+  base = "frontend"
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Redirect SPA client routes to index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
