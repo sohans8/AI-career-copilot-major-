@@ -1,48 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { 
   Sparkles, 
   CheckCircle2, 
   AlertCircle, 
   HelpCircle, 
-  ArrowRight, 
   BookOpen, 
-  Compass, 
-  Award,
-  TrendingUp,
-  Brain,
-  Heart,
-  Check,
-  ShieldAlert,
-  Info
+  TrendingUp, 
+  ShieldAlert, 
+  Info,
+  ArrowLeft
 } from 'lucide-react';
 
-export default function ResultsView({ activeResult, onTakeAssessment, onAnswerQuestion }) {
-  const [selectedCourseId, setSelectedCourseId] = useState(null);
-
+export default function ResultsView({ activeResult, studentName, onEditAssessment }) {
   if (!activeResult) {
-    return (
-      <div className="bg-white rounded-3xl p-12 text-center border border-slate-100 shadow-sm space-y-4 max-w-lg mx-auto my-12">
-        <div className="w-16 h-16 rounded-full bg-amber-50 text-amber-500 flex items-center justify-center mx-auto text-2xl">
-          ✨
-        </div>
-        <h3 className="text-xl font-bold text-slate-900">No Active Recommendation Yet</h3>
-        <p className="text-sm text-slate-500">
-          Complete the quick assessment or load a test profile to see your personalized AI career recommendations.
-        </p>
-        <button
-          onClick={onTakeAssessment}
-          className="mt-4 px-6 py-3 bg-[#FF6B00] hover:bg-[#E05E00] text-white font-bold text-sm rounded-xl shadow-md transition-all inline-flex items-center gap-2"
-        >
-          <Sparkles className="w-4 h-4 text-amber-300" />
-          <span>Take Assessment Now</span>
-        </button>
-      </div>
-    );
+    return null;
   }
 
   const { student_profile, recommendation_metadata, recommendations } = activeResult;
   const topRec = recommendations?.[0];
-  const overallScore = topRec ? Math.round(topRec.score || topRec.overall_match_score || 89) : 89;
+  const overallScore = topRec ? Math.round(topRec.score || topRec.overall_match_score || 84) : 84;
   const status = recommendation_metadata?.recommendation_status || 'moderate_confidence';
   const uncertainty = recommendation_metadata?.uncertainty_score || 0.39;
   const followUpQuestions = recommendation_metadata?.follow_up_questions || [];
@@ -66,38 +42,39 @@ export default function ResultsView({ activeResult, onTakeAssessment, onAnswerQu
   const StatusIcon = statusBadge.icon;
 
   return (
-    <div className="space-y-8">
-      {/* Top Banner */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+    <div className="space-y-8 max-w-4xl mx-auto">
+      {/* Top Navigation & Header */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-800 border border-amber-200 mb-2">
-            <Sparkles className="w-3.5 h-3.5 text-[#FF6B00]" /> Verified AI Career Analysis
+            <Sparkles className="w-3.5 h-3.5 text-[#FF6B00]" /> Verified AI Career Recommendation
           </span>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-            ✨ Your Recommended Career Path
+            ✨ Your Career Recommendation
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 font-medium mt-0.5">
-            Prepared for <strong className="text-slate-800">{student_profile?.name || 'Student'}</strong> based on skill & interest alignment.
+            Welcome, <strong className="text-slate-900">{student_profile?.name || studentName || 'Student'}</strong>! Here is your AI-analyzed pathway.
           </p>
         </div>
 
         <button
-          onClick={onTakeAssessment}
-          className="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl transition-all self-start md:self-auto"
+          onClick={onEditAssessment}
+          className="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl transition-all self-start sm:self-auto flex items-center gap-1.5"
         >
-          Retake Assessment
+          <ArrowLeft className="w-4 h-4" />
+          <span>Edit Assessment</span>
         </button>
       </div>
 
       {/* Prominent Recommended Stream Card */}
-      <div className="bg-gradient-to-br from-indigo-900 via-indigo-800 to-purple-900 rounded-3xl p-6 sm:p-8 text-white shadow-2xl relative overflow-hidden">
-        <div className="absolute right-0 top-0 w-96 h-96 bg-amber-400/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="bg-gradient-to-br from-[#3B30C8] via-indigo-800 to-purple-900 rounded-3xl p-6 sm:p-8 text-white shadow-2xl relative overflow-hidden">
+        <div className="absolute right-0 top-0 w-80 h-80 bg-amber-400/10 rounded-full blur-3xl pointer-events-none"></div>
 
-        <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-          <div className="space-y-3 max-w-xl">
+        <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+          <div className="space-y-3">
             <div className="flex flex-wrap items-center gap-2">
               <span className="px-3 py-1 bg-amber-400 text-slate-900 font-extrabold text-xs uppercase tracking-wider rounded-full shadow-xs">
-                Rank #1 Stream Target
+                Recommended Stream
               </span>
 
               <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border ${statusBadge.color}`}>
@@ -105,28 +82,26 @@ export default function ResultsView({ activeResult, onTakeAssessment, onAnswerQu
               </span>
             </div>
 
-            <h3 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+            <h3 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white uppercase">
               {topRec?.stream_name || 'Science (PCM)'}
             </h3>
 
-            <p className="text-sm text-indigo-100 leading-relaxed font-medium">
-              {topRec?.description || 'Focuses on Mathematics, Physics, Chemistry, and Computer Science foundation leading into Technology and Engineering pathways.'}
+            <p className="text-xs sm:text-sm text-indigo-100 max-w-xl leading-relaxed font-medium">
+              {topRec?.description || 'Focuses on Mathematics, Physics, Chemistry, and Technology options.'}
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 text-xs text-indigo-200 pt-1">
+            <div className="text-xs text-indigo-200 pt-1">
               <span>Uncertainty Score: <strong className="text-white">{uncertainty}</strong></span>
-              <span>•</span>
-              <span>Dynamic Weighting: <strong className="text-white">Active Rule + ML Hybrid</strong></span>
             </div>
           </div>
 
-          {/* Big Percentage Match Gauge */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 flex flex-col items-center justify-center text-center shrink-0 min-w-[200px]">
-            <span className="text-4xl sm:text-5xl font-extrabold text-amber-300 tracking-tight">
+          {/* Big Match Percentage Card */}
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 flex flex-col items-center justify-center text-center shrink-0 min-w-[180px]">
+            <span className="text-4xl sm:text-5xl font-black text-amber-300 tracking-tight">
               {overallScore}%
             </span>
             <span className="text-xs font-extrabold uppercase text-white tracking-widest mt-1">
-              Overall Match Score
+              Match Score
             </span>
             <div className="mt-3 w-full bg-white/20 rounded-full h-1.5 overflow-hidden">
               <div className="bg-amber-400 h-1.5 rounded-full" style={{ width: `${overallScore}%` }}></div>
@@ -135,51 +110,41 @@ export default function ResultsView({ activeResult, onTakeAssessment, onAnswerQu
         </div>
       </div>
 
-      {/* Match Breakdown Cards ("Why we recommend this") */}
+      {/* Why This Matches You */}
       <div className="space-y-4">
         <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
           <TrendingUp className="w-5 h-5 text-[#FF6B00]" />
-          <span>Why We Recommend This Pathway</span>
+          <span>Why This Matches You</span>
         </h3>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm space-y-2">
-            <div className="text-xs font-bold text-slate-400 uppercase">Subject Alignment</div>
+            <div className="text-xs font-bold text-slate-400 uppercase">Subject Match</div>
             <div className="text-2xl font-extrabold text-indigo-600">
               {topRec ? Math.round(topRec.subject_match_score || 100) : 100}%
             </div>
             <p className="text-xs text-slate-500">
-              Matches your favourite subjects: {student_profile?.subjects?.join(', ')}
+              Selected: {student_profile?.subjects?.join(', ') || 'Mathematics, Physics'}
             </p>
           </div>
 
           <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm space-y-2">
-            <div className="text-xs font-bold text-slate-400 uppercase">Skill Alignment</div>
+            <div className="text-xs font-bold text-slate-400 uppercase">Skill Match</div>
             <div className="text-2xl font-extrabold text-purple-600">
               {topRec ? Math.round(topRec.skill_match_score || 100) : 100}%
             </div>
             <p className="text-xs text-slate-500">
-              Matches key skills: {topRec?.matched_skills?.join(', ') || 'Logical Thinking, Problem Solving'}
+              Selected: {student_profile?.skills?.join(', ') || 'Problem Solving, Programming'}
             </p>
           </div>
 
           <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm space-y-2">
-            <div className="text-xs font-bold text-slate-400 uppercase">Interest Alignment</div>
+            <div className="text-xs font-bold text-slate-400 uppercase">Interest Match</div>
             <div className="text-2xl font-extrabold text-amber-600">
               {topRec ? Math.round(topRec.interest_match_score || 100) : 100}%
             </div>
             <p className="text-xs text-slate-500">
-              Matches interest areas: {topRec?.matched_interests?.join(', ') || 'Technology, Engineering'}
-            </p>
-          </div>
-
-          <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm space-y-2">
-            <div className="text-xs font-bold text-slate-400 uppercase">ML Model Probability</div>
-            <div className="text-2xl font-extrabold text-slate-900">
-              {topRec ? Math.round((topRec.ml_probability || 0.65) * 100) : 65}%
-            </div>
-            <p className="text-xs text-slate-500">
-              Calibrated Logistic Classifier confidence prediction.
+              Selected: {student_profile?.interests?.join(', ') || 'Technology, Engineering'}
             </p>
           </div>
         </div>
@@ -188,28 +153,20 @@ export default function ResultsView({ activeResult, onTakeAssessment, onAnswerQu
       {/* Recommended Courses Section */}
       <div className="space-y-4">
         <div className="flex items-center justify-between">
-          <div>
-            <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
-              <BookOpen className="w-5 h-5 text-indigo-600" />
-              <span>Recommended Courses & Specializations</span>
-            </h3>
-            <p className="text-xs text-slate-500">Select any course to view its mapped career pathways.</p>
-          </div>
+          <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+            <BookOpen className="w-5 h-5 text-indigo-600" />
+            <span>Recommended Courses</span>
+          </h3>
           <span className="text-xs font-semibold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">
-            {topRec?.recommended_courses?.length || 0} Courses Found
+            {topRec?.recommended_courses?.length || 0} Courses
           </span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {topRec?.recommended_courses?.map((course) => (
             <div
               key={course.course_id}
-              onClick={() => setSelectedCourseId(course.course_id)}
-              className={`bg-white rounded-3xl p-6 border transition-all cursor-pointer shadow-sm relative space-y-4 ${
-                selectedCourseId === course.course_id
-                  ? 'border-indigo-600 ring-2 ring-indigo-500/20 bg-indigo-50/30'
-                  : 'border-slate-100 hover:border-slate-300 hover:shadow-md'
-              }`}
+              className="bg-white rounded-3xl p-6 border border-slate-100 shadow-sm space-y-4"
             >
               <div className="flex items-start justify-between gap-2">
                 <div className="w-10 h-10 rounded-2xl bg-indigo-600 text-white flex items-center justify-center font-bold text-sm shadow-md">
@@ -224,15 +181,12 @@ export default function ResultsView({ activeResult, onTakeAssessment, onAnswerQu
                 <h4 className="font-bold text-slate-900 text-base leading-snug">
                   {course.course_name}
                 </h4>
-                <p className="text-xs text-slate-500 mt-1 line-clamp-2">
-                  {course.typical_subjects || 'Core subjects with specialized elective choices.'}
-                </p>
               </div>
 
-              {/* Mapped Careers Preview List */}
+              {/* Mapped Career Options */}
               <div className="space-y-2 pt-2 border-t border-slate-100">
                 <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">
-                  Mapped Career Pathways:
+                  Career Options:
                 </span>
                 <ul className="space-y-1.5">
                   {course.related_careers?.map((car) => (
@@ -249,7 +203,7 @@ export default function ResultsView({ activeResult, onTakeAssessment, onAnswerQu
         </div>
       </div>
 
-      {/* Follow-up Questions Card (Interactive Component) */}
+      {/* Follow-up Questions Section */}
       {followUpQuestions.length > 0 && (
         <div className="bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-3xl p-6 sm:p-8 shadow-xl space-y-4">
           <div className="flex items-center gap-3">
@@ -258,7 +212,7 @@ export default function ResultsView({ activeResult, onTakeAssessment, onAnswerQu
             </div>
             <div>
               <h3 className="text-lg font-extrabold text-white">🎯 Let's Make Your Recommendation More Precise</h3>
-              <p className="text-xs text-amber-100">Our engine detected subtle options. Answer these quick questions to refine your top match:</p>
+              <p className="text-xs text-amber-100">Follow-up questions based on competing stream evidence:</p>
             </div>
           </div>
 
@@ -266,12 +220,6 @@ export default function ResultsView({ activeResult, onTakeAssessment, onAnswerQu
             {followUpQuestions.map((q, idx) => (
               <div key={idx} className="bg-white/10 backdrop-blur border border-white/20 p-4 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <span className="text-sm font-semibold text-white">{q}</span>
-                <button
-                  onClick={() => onAnswerQuestion && onAnswerQuestion(q)}
-                  className="px-4 py-2 bg-white text-slate-900 font-bold text-xs rounded-xl hover:bg-amber-100 transition-colors shrink-0 shadow-md"
-                >
-                  Answer Question
-                </button>
               </div>
             ))}
           </div>
