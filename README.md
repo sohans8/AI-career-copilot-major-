@@ -6,7 +6,7 @@ An AI-powered career recommendation system for Class 10 students deciding their 
 
 ## Preview
 
-> Screenshots live in [`docs/screenshots/`](docs/screenshots/). Add your own by taking a screenshot of `localhost:5173` and saving it there.
+![Career Copilot Dashboard](docs/screenshots/dashboard.png)
 
 ---
 
