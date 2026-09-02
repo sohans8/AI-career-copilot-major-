@@ -1,24 +1,131 @@
 import React, { useState } from 'react';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles, Zap, Star, Brain } from 'lucide-react';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
-
 import AssessmentView from './views/AssessmentView';
 import ResultsView from './views/ResultsView';
 import StreamsView from './views/StreamsView';
 import CareersView from './views/CareersView';
-
 import { getRecommendations } from './services/api';
 
-export default function App() {
-  const [studentName, setStudentName] = useState('');
-  const [hasEnteredName, setHasEnteredName] = useState(false);
-  const [inputName, setInputName] = useState('');
+// ─── Floating orb background ─────────────────────────────────────────────────
+function OrbBg() {
+  return (
+    <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+      <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-indigo-600/20 rounded-full blur-[120px]" />
+      <div className="absolute top-1/2 -right-40 w-[500px] h-[500px] bg-purple-600/15 rounded-full blur-[100px]" />
+      <div className="absolute -bottom-40 left-1/3 w-[400px] h-[400px] bg-pink-600/10 rounded-full blur-[90px]" />
+    </div>
+  );
+}
 
-  const [activeView, setActiveView] = useState('home'); // 'home', 'results', 'careers', 'streams'
-  const [activeResult, setActiveResult] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+// ─── Landing / Name Entry Screen ─────────────────────────────────────────────
+function LandingScreen({ inputName, setInputName, onSubmit }) {
+  return (
+    <div className="min-h-screen relative flex items-center justify-center p-4" style={{background: 'linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)'}}>
+      <OrbBg />
+
+      {/* Floating badges */}
+      <div className="absolute top-12 left-8 hidden lg:flex items-center gap-2 glass rounded-2xl px-4 py-2.5 animate-float" style={{animationDelay:'0s'}}>
+        <Zap className="w-4 h-4 text-amber-400" />
+        <span className="text-xs font-semibold text-white/80">AI-Powered</span>
+      </div>
+      <div className="absolute top-24 right-12 hidden lg:flex items-center gap-2 glass rounded-2xl px-4 py-2.5 animate-float" style={{animationDelay:'1s'}}>
+        <Star className="w-4 h-4 text-pink-400" />
+        <span className="text-xs font-semibold text-white/80">12 Stream Options</span>
+      </div>
+      <div className="absolute bottom-20 left-16 hidden lg:flex items-center gap-2 glass rounded-2xl px-4 py-2.5 animate-float" style={{animationDelay:'2s'}}>
+        <Brain className="w-4 h-4 text-cyan-400" />
+        <span className="text-xs font-semibold text-white/80">200+ Careers</span>
+      </div>
+
+      {/* Main card */}
+      <div className="relative z-10 w-full max-w-md animate-scale-in">
+        {/* Glow ring */}
+        <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-[36px] blur-sm opacity-50" />
+
+        <div className="relative bg-[#1a1740]/95 backdrop-blur-xl rounded-[32px] p-8 border border-white/10 shadow-card-dark">
+          {/* Logo */}
+          <div className="flex justify-center mb-6">
+            <div className="relative">
+              <div className="absolute inset-0 bg-indigo-500 rounded-2xl blur-md opacity-60" />
+              <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg">
+                <Sparkles className="w-8 h-8 text-white" />
+              </div>
+            </div>
+          </div>
+
+          {/* Title */}
+          <div className="text-center mb-8">
+            <h1 className="text-3xl font-black text-white tracking-tight mb-1">
+              Career Copilot
+            </h1>
+            <p className="text-sm font-medium text-indigo-300">
+              AI-Powered Class 10 → Class 11 Pathway
+            </p>
+          </div>
+
+          {/* Stats row */}
+          <div className="grid grid-cols-3 gap-3 mb-8">
+            {[
+              { val: '12', label: 'Streams' },
+              { val: '200+', label: 'Careers' },
+              { val: 'AI', label: 'Engine' },
+            ].map((s) => (
+              <div key={s.label} className="glass rounded-2xl p-3 text-center">
+                <div className="text-lg font-black text-white">{s.val}</div>
+                <div className="text-[10px] text-indigo-300 font-semibold uppercase tracking-wider">{s.label}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* Form */}
+          <form onSubmit={onSubmit} className="space-y-4">
+            <div>
+              <label className="block text-xs font-bold text-indigo-200 mb-2 uppercase tracking-wider">
+                Your Name
+              </label>
+              <input
+                type="text"
+                value={inputName}
+                onChange={(e) => setInputName(e.target.value)}
+                placeholder="Enter your full name..."
+                required
+                autoFocus
+                className="w-full px-4 py-4 rounded-2xl bg-white/8 border border-white/15 text-white placeholder-white/30 font-medium text-sm focus:outline-none focus:border-indigo-400 focus:bg-white/12 transition-all"
+                style={{background: 'rgba(255,255,255,0.07)'}}
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="w-full py-4 rounded-2xl font-bold text-sm text-white flex items-center justify-center gap-2 transition-all hover:-translate-y-0.5 active:scale-95"
+              style={{background: 'linear-gradient(135deg, #f97316, #ef4444)', boxShadow: '0 8px 24px rgba(249,115,22,0.4)'}}
+            >
+              <span>Get My Career Recommendation</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </form>
+
+          {/* Footer note */}
+          <p className="text-center text-xs text-white/30 mt-5 font-medium">
+            Hybrid AI + Domain Rule Engine • Free • No account needed
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ─── Main App ─────────────────────────────────────────────────────────────────
+export default function App() {
+  const [studentName, setStudentName]       = useState('');
+  const [hasEnteredName, setHasEnteredName] = useState(false);
+  const [inputName, setInputName]           = useState('');
+  const [activeView, setActiveView]         = useState('home');
+  const [activeResult, setActiveResult]     = useState(null);
+  const [loading, setLoading]               = useState(false);
+  const [error, setError]                   = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleNameSubmit = (e) => {
@@ -27,7 +134,6 @@ export default function App() {
     if (trimmed) {
       setStudentName(trimmed);
       setHasEnteredName(true);
-      setActiveView('home');
     }
   };
 
@@ -43,132 +149,74 @@ export default function App() {
     setLoading(true);
     setError(null);
     try {
-      const payload = {
+      const res = await getRecommendations({
         name: studentName,
         subjects: profileData.subjects || [],
         skills: profileData.skills || [],
         interests: profileData.interests || [],
-      };
-      const res = await getRecommendations(payload);
+      });
       setActiveResult(res);
       setActiveView('results');
     } catch (err) {
-      console.error('Assessment Submit Error:', err);
-      setError('Unable to reach Career Copilot API backend. Ensure FastAPI server is running on http://127.0.0.1:8000.');
+      setError('Cannot reach the backend. Make sure the FastAPI server is running on http://127.0.0.1:8000.');
     } finally {
       setLoading(false);
     }
   };
 
-  // STEP 1: INITIAL NAME PROMPT SCREEN
+  // ── Landing screen ──────────────────────────────────────────────────────────
   if (!hasEnteredName) {
-    return (
-      <div className="min-h-screen bg-[#3B30C8] flex items-center justify-center p-4 font-sans">
-        <div className="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl space-y-6 text-center border border-white/20">
-          <div className="w-16 h-16 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center mx-auto text-3xl font-extrabold shadow-sm border border-indigo-100">
-            ✨
-          </div>
-
-          <div>
-            <h1 className="text-2xl font-black text-slate-900 tracking-tight">Career Copilot</h1>
-            <p className="text-xs font-semibold text-indigo-600 uppercase tracking-widest mt-1">Class 10 AI Pathway</p>
-          </div>
-
-          <form onSubmit={handleNameSubmit} className="space-y-5 text-left">
-            <div>
-              <label className="block text-xs font-bold text-slate-700 mb-1.5">
-                What's your name?
-              </label>
-              <input
-                type="text"
-                value={inputName}
-                onChange={(e) => setInputName(e.target.value)}
-                placeholder="Enter your full name"
-                required
-                autoFocus
-                className="w-full px-4 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 font-medium text-sm text-slate-900 shadow-2xs"
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="w-full py-3.5 bg-[#FF6B00] hover:bg-[#E05E00] text-white font-extrabold text-sm rounded-xl shadow-lg shadow-orange-500/30 transition-all flex items-center justify-center gap-2 transform hover:-translate-y-0.5"
-            >
-              <span>Continue</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </form>
-        </div>
-      </div>
-    );
+    return <LandingScreen inputName={inputName} setInputName={setInputName} onSubmit={handleNameSubmit} />;
   }
 
-  // STEP 2: MAIN ASSESSMENT & NAVIGATION SCREEN
-  const renderActiveView = () => {
+  // ── Main dashboard ──────────────────────────────────────────────────────────
+  const renderView = () => {
     switch (activeView) {
-      case 'home':
-        return (
-          <AssessmentView
-            studentName={studentName}
-            onSubmit={handleAssessmentSubmit}
-            loading={loading}
-          />
-        );
-      case 'results':
-        return (
-          <ResultsView
-            activeResult={activeResult}
-            studentName={studentName}
-            onEditAssessment={() => setActiveView('home')}
-          />
-        );
-      case 'streams':
-        return <StreamsView onSelectStream={() => setActiveView('home')} />;
-      case 'careers':
-        return <CareersView />;
-      default:
-        return (
-          <AssessmentView
-            studentName={studentName}
-            onSubmit={handleAssessmentSubmit}
-            loading={loading}
-          />
-        );
+      case 'home':    return <AssessmentView studentName={studentName} onSubmit={handleAssessmentSubmit} loading={loading} />;
+      case 'results': return <ResultsView activeResult={activeResult} studentName={studentName} onEditAssessment={() => setActiveView('home')} />;
+      case 'streams': return <StreamsView onSelectStream={() => setActiveView('home')} />;
+      case 'careers': return <CareersView />;
+      default:        return <AssessmentView studentName={studentName} onSubmit={handleAssessmentSubmit} loading={loading} />;
     }
   };
 
   return (
-    <div className="w-full max-w-[1536px] mx-auto min-h-[calc(100vh-2rem)] flex flex-col lg:flex-row rounded-[32px] overflow-hidden shadow-2xl bg-[#3B30C8] border border-white/10">
-      {/* Left Sidebar (Only Home, Explore Careers, Streams & Courses) */}
-      <div className={`lg:block ${mobileMenuOpen ? 'block' : 'hidden'} shrink-0`}>
-        <Sidebar
-          activeView={activeView}
-          setActiveView={(view) => { setActiveView(view); setMobileMenuOpen(false); }}
-          onResetName={handleResetName}
-        />
-      </div>
+    <div className="min-h-screen relative" style={{background: 'linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)'}}>
+      <OrbBg />
+      <div className="relative z-10 max-w-[1600px] mx-auto p-2 sm:p-3 lg:p-4 min-h-screen flex flex-col">
+        <div className="flex flex-col lg:flex-row gap-3 flex-1">
 
-      {/* Main White Content Container */}
-      <main className="flex-1 bg-white rounded-3xl lg:rounded-[32px] p-4 sm:p-6 lg:p-8 m-1 lg:m-2 flex flex-col overflow-x-hidden min-h-0">
-        {/* Welcome Header Bar */}
-        <Header
-          studentName={studentName}
-          toggleMobileMenu={() => setMobileMenuOpen(!mobileMenuOpen)}
-        />
-
-        {/* Global Error Banner */}
-        {error && (
-          <div className="mb-4 p-4 rounded-2xl bg-rose-50 border border-rose-200 text-rose-800 text-xs font-semibold flex items-center justify-between">
-            <span>{error}</span>
-            <button onClick={() => setError(null)} className="text-rose-600 hover:text-rose-900 font-bold">Dismiss</button>
+          {/* Sidebar */}
+          <div className={`lg:block ${mobileMenuOpen ? 'block' : 'hidden'} shrink-0`}>
+            <Sidebar
+              activeView={activeView}
+              setActiveView={(v) => { setActiveView(v); setMobileMenuOpen(false); }}
+              onResetName={handleResetName}
+              studentName={studentName}
+            />
           </div>
-        )}
 
-        {/* Active Main View */}
-        <div className="flex-1">
-          {renderActiveView()}
+          {/* Main content */}
+          <main className="flex-1 glass-white rounded-[28px] overflow-hidden flex flex-col min-h-[calc(100vh-2rem)]">
+            <Header
+              studentName={studentName}
+              activeView={activeView}
+              toggleMobileMenu={() => setMobileMenuOpen(!mobileMenuOpen)}
+            />
+
+            {error && (
+              <div className="mx-6 mt-0 mb-4 p-4 rounded-2xl bg-red-50 border border-red-200 text-red-700 text-xs font-semibold flex items-center justify-between">
+                <span>{error}</span>
+                <button onClick={() => setError(null)} className="font-black text-red-500 hover:text-red-700 ml-4">✕</button>
+              </div>
+            )}
+
+            <div className="flex-1 overflow-y-auto px-4 sm:px-6 lg:px-8 pb-8">
+              {renderView()}
+            </div>
+          </main>
         </div>
-      </main>
+      </div>
     </div>
   );
 }

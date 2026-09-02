@@ -8,26 +8,44 @@ export default {
     extend: {
       colors: {
         brand: {
-          purple: '#3B30C8',
-          darkPurple: '#2E24A7',
-          lightPurple: '#ECEBFF',
-          accentOrange: '#FF6B00',
-          hoverOrange: '#E05E00',
-          peachBg: '#FFFBEB',
-          softBg: '#F8FAFC',
+          purple:      '#6366f1',
+          deepPurple:  '#4f46e5',
+          darkBg:      '#0f0c29',
+          midBg:       '#302b63',
+          card:        '#1e1b4b',
+          orange:      '#f97316',
+          amber:       '#f59e0b',
+          pink:        '#ec4899',
+          cyan:        '#06b6d4',
+          emerald:     '#10b981',
         }
       },
       fontFamily: {
-        sans: ['Inter', 'DM Sans', 'sans-serif'],
+        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
       },
       borderRadius: {
-        '3xl': '24px',
         '4xl': '32px',
+        '5xl': '40px',
       },
       boxShadow: {
-        'soft': '0 10px 30px -5px rgba(59, 48, 200, 0.05)',
-        'orange-glow': '0 8px 20px -3px rgba(255, 107, 0, 0.35)',
-        'card': '0 4px 20px 0 rgba(0, 0, 0, 0.04)',
+        'glow-purple': '0 0 40px rgba(99, 102, 241, 0.35)',
+        'glow-orange': '0 0 30px rgba(249, 115, 22, 0.4)',
+        'glow-pink':   '0 0 30px rgba(236, 72, 153, 0.35)',
+        'card-dark':   '0 8px 32px rgba(0, 0, 0, 0.4)',
+        'card-light':  '0 4px 24px rgba(0, 0, 0, 0.06)',
+      },
+      backgroundImage: {
+        'gradient-dark': 'linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)',
+        'gradient-purple': 'linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%)',
+        'gradient-orange': 'linear-gradient(135deg, #f97316 0%, #ef4444 100%)',
+        'gradient-card': 'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%)',
+      },
+      animation: {
+        'float': 'float 3s ease-in-out infinite',
+        'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
+        'scale-in': 'scaleIn 0.3s ease-out forwards',
+        'shimmer': 'shimmer 2s linear infinite',
+        'spin-slow': 'spin 8s linear infinite',
       }
     },
   },
