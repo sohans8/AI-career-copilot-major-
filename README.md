@@ -39,9 +39,8 @@ The system returns a ranked list of top-3 streams, a match score, an uncertainty
 - **Adaptive Follow-up Questions** — When competing streams are close or inputs are sparse, targeted clarification questions are generated automatically.
 - **Course & Career Mapping** — The top recommended stream links directly to relevant courses and mapped career options (e.g., Software Engineer → B.Tech Computer Science → Science PCM).
 - **12 Stream Catalog** — Browse all Class 11–12 academic pathways with descriptions and domain tags.
-- **Career Explorer** — Search and filter 200+ careers across Technology, Engineering, Healthcare, Finance, Creative, and more.
-- **Preset Profiles** — Pre-loaded example student profiles (PCM, PCB, Commerce, Humanities, Conflicting, Minimal) for quick testing.
-- **Responsive UI** — Mobile-first React + Tailwind design with sidebar navigation, animated selection chips, and an accessible layout.
+- **Career Explorer** — Search and filter 200+ careers across Technology, Engineering, Healthcare, Finance, Law, Creative, and more.
+- **Modern UI** — Dark glassmorphism landing screen, animated SVG score ring on results, step-based tabbed assessment form, color-coded stream and career cards, and a fully responsive sidebar layout.
 
 ---
 
