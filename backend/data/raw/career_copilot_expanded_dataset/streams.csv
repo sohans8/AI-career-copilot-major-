@@ -1,0 +1,13 @@
+stream_id,stream_name,description
+S01,Science (PCM),"STEM pathway focusing on Physics, Chemistry, and Mathematics for Engineering and Technology."
+S02,Science (PCB),"Medical and Life Sciences pathway focusing on Biology, Chemistry, and Physics."
+S03,Science (PCMB),"Comprehensive Science pathway integrating Physics, Chemistry, Mathematics, and Biology."
+S04,Commerce with Mathematics,"Business and Quantitative Finance pathway focusing on Economics, Accountancy, and Advanced Math."
+S05,Commerce without Mathematics,"Management, Accounting, Business Law, and Entrepreneurial studies."
+S06,Humanities & Social Sciences,"Liberal arts, History, Political Science, Sociology, Philosophy, and Public Policy."
+S07,Fine Arts & Design,"Visual arts, Commercial Design, Animation, Architecture foundation, and Multimedia."
+S08,Vocational & Applied Technologies,"Industry-aligned vocational training in Information Technology, Mechatronics, and Applied Trades."
+S09,Agriculture & Environmental Sciences,"Agronomy, Soil Sciences, Horticulture, and Ecological Sustainability."
+S10,Legal & Administrative Studies,"Jurisprudence, Constitutional Studies, Governance, and International Relations."
+S11,Paramedical & Allied Healthcare,"Nursing, Physical Therapy, Medical Laboratory Technology, and Emergency Care."
+S12,Mass Media & Communication,"Journalism, Public Relations, Advertising, Media Production, and Digital Broadcasting."

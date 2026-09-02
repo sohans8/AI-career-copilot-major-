@@ -1,0 +1,60 @@
+interest_id,interest_name,category
+I001,Technology,STEM
+I002,Engineering,STEM
+I003,Science & Research,STEM
+I004,Mathematics & Statistics,STEM
+I005,Cybersecurity & Networks,STEM
+I006,Artificial Intelligence & Data,STEM
+I007,Aviation & Aerospace,STEM
+I008,Architecture & Built Environment,STEM
+I009,Environmental Studies & Sustainability,STEM
+I010,Space & Astronomy,STEM
+I011,Robotics & Automation,STEM
+I012,Biotechnology & Genetics,STEM
+I013,Renewable Energy,STEM
+I014,Nanotechnology,STEM
+I015,Marine & Oceanography,STEM
+I016,Medicine & Healthcare,Healthcare
+I017,Nursing & Patient Care,Healthcare
+I018,Mental Health & Wellbeing,Healthcare
+I019,Nutrition & Dietetics,Healthcare
+I020,Pharmacy & Pharmacology,Healthcare
+I021,Dentistry,Healthcare
+I022,Veterinary Sciences,Healthcare
+I023,Public Health,Healthcare
+I024,Finance & Accounting,Business
+I025,Business & Entrepreneurship,Business
+I026,Economics,Business
+I027,Marketing & Brand Strategy,Business
+I028,Investments & Banking,Business
+I029,Supply Chain & Logistics,Business
+I030,Human Resources & People Operations,Business
+I031,Real Estate & Property,Business
+I032,E-Commerce & Digital Business,Business
+I033,Law,Social Science
+I034,Government & Public Service,Social Science
+I035,Psychology,Social Science
+I036,Public Policy & Governance,Social Science
+I037,International Relations & Diplomacy,Social Science
+I038,Sociology & Community Work,Social Science
+I039,Human Rights & Advocacy,Social Science
+I040,Education & Pedagogy,Social Science
+I041,History & Culture,Humanities
+I042,Media & Communication,Humanities
+I043,Languages & Literature,Humanities
+I044,Philosophy & Ethics,Humanities
+I045,Archaeology & Anthropology,Humanities
+I046,Journalism & Mass Media,Humanities
+I047,Design & Visual Arts,Creative
+I048,Animation & Motion Graphics,Creative
+I049,Fashion & Apparel,Creative
+I050,Music & Audio Arts,Creative
+I051,Performing Arts & Theatre,Creative
+I052,Film & Cinematography,Creative
+I053,Game Design & Interactive Media,Creative
+I054,Photography & Videography,Creative
+I055,Hospitality & Tourism,Services & Trades
+I056,Culinary Arts & Gastronomy,Services & Trades
+I057,Sports & Athletic Training,Services & Trades
+I058,Aviation Management,Services & Trades
+I059,Event Planning & Management,Services & Trades

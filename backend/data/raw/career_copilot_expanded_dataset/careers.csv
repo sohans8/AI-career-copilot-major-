@@ -1,0 +1,201 @@
+career_id,career_name,domain,related_interests,useful_skills
+CAR001,Software Engineer,Technology,Technology;Engineering,Logical Thinking;Problem Solving;Programming
+CAR002,Data Scientist,Technology,Artificial Intelligence & Data;Mathematics & Statistics,Statistical Reasoning;Machine Learning Pipeline;Analytical Thinking
+CAR003,Cybersecurity Analyst,Technology,Cybersecurity & Networks;Technology,Troubleshooting & Debugging;Network Engineering;Attention to Detail
+CAR004,Cloud Solutions Architect,Technology,Technology;Engineering,Cloud Infrastructure;System Architecture;Logical Thinking
+CAR005,DevOps Engineer,Technology,Technology;Engineering,System Administration;Troubleshooting & Debugging;Programming
+CAR006,AI / ML Research Engineer,Technology,Artificial Intelligence & Data;Technology,Machine Learning Pipeline;Statistical Reasoning;Algorithmic Thinking
+CAR007,Mobile App Developer,Technology,Technology;Design & Visual Arts,Programming;UI/UX Prototyping;Problem Solving
+CAR008,Full-Stack Web Developer,Technology,Technology,Programming;Database Management;Problem Solving
+CAR009,Database Administrator,Technology,Technology;Mathematics & Statistics,Database Management;Attention to Detail;Troubleshooting & Debugging
+CAR010,Computer Systems Analyst,Technology,Technology;Business & Entrepreneurship,Analytical Thinking;Communication;System Architecture
+CAR011,Robotics Engineer,Engineering,Robotics & Automation;Engineering,Robotics Programming;Circuit Design;Problem Solving
+CAR012,Mechanical Engineer,Engineering,Engineering,CAD Modeling;Spatial Awareness;Problem Solving
+CAR013,Civil Engineer,Engineering,Engineering;Architecture & Built Environment,CAD Modeling;Quantitative Modeling;Project Management
+CAR014,Electrical Engineer,Engineering,Engineering;Technology,Circuit Design;Troubleshooting & Debugging;Logical Thinking
+CAR015,Aerospace Engineer,Engineering,Aviation & Aerospace;Engineering,Quantitative Modeling;Spatial Awareness;Problem Solving
+CAR016,Chemical Engineer,Engineering,Engineering;Science & Research,Diagnostic Acumen;Analytical Thinking;Problem Solving
+CAR017,Biomedical Engineer,Engineering,Engineering;Medicine & Healthcare,Diagnostic Acumen;Design Thinking;Circuit Design
+CAR018,Environmental Engineer,Engineering,Environmental Studies & Sustainability;Engineering,Quantitative Modeling;Research;Problem Solving
+CAR019,Automotive Engineer,Engineering,Engineering,CAD Modeling;Troubleshooting & Debugging;System Architecture
+CAR020,Mechatronics Specialist,Engineering,Robotics & Automation;Engineering,Robotics Programming;Circuit Design;Problem Solving
+CAR021,Doctor / Physician,Healthcare,Medicine & Healthcare;Science & Research,Diagnostic Acumen;Observation;Empathy;Decision Making
+CAR022,Surgeon,Healthcare,Medicine & Healthcare,Attention to Detail;Decision Making;Diagnostic Acumen
+CAR023,Dentist,Healthcare,Dentistry;Medicine & Healthcare,Attention to Detail;Observation;Customer Relations
+CAR024,Pharmacist,Healthcare,Pharmacy & Pharmacology;Chemistry,Attention to Detail;Research;Customer Relations
+CAR025,Biotechnologist,Science,Biotechnology & Genetics;Science & Research,Research;Hypothesis Testing;Observation
+CAR026,Microbiologist,Science,Science & Research;Medicine & Healthcare,Observation;Research;Attention to Detail
+CAR027,Registered Nurse,Healthcare,Nursing & Patient Care;Medicine & Healthcare,Empathy;Active Listening;Attention to Detail;Teamwork
+CAR028,Physiotherapist,Healthcare,Sports & Athletic Training;Medicine & Healthcare,Empathy;Diagnostic Acumen;Observation
+CAR029,Clinical Psychologist,Healthcare,Psychology;Mental Health & Wellbeing,Empathy;Active Listening;Interviewing;Critical Evaluation
+CAR030,Radiologist,Healthcare,Medicine & Healthcare;Technology,Diagnostic Acumen;Observation;Attention to Detail
+CAR031,Veterinarian,Healthcare,Veterinary Sciences;Medicine & Healthcare,Diagnostic Acumen;Observation;Empathy
+CAR032,Epidemiologist,Healthcare,Public Health;Mathematics & Statistics,Statistical Reasoning;Research;Critical Evaluation
+CAR033,Medical Laboratory Technologist,Healthcare,Medicine & Healthcare;Science & Research,Attention to Detail;Diagnostic Acumen;Troubleshooting & Debugging
+CAR034,Nutritionist / Dietitian,Healthcare,Nutrition & Dietetics;Healthcare,Active Listening;Communication;Analytical Thinking
+CAR035,Occupational Therapist,Healthcare,Mental Health & Wellbeing;Healthcare,Empathy;Design Thinking;Active Listening
+CAR036,Chartered Accountant,Finance,Finance & Accounting;Business & Entrepreneurship,Numerical Ability;Financial Analysis;Attention to Detail
+CAR037,Investment Banker,Finance,Investments & Banking;Finance & Accounting,Financial Analysis;Risk Assessment;Quantitative Modeling
+CAR038,Financial Analyst,Finance,Finance & Accounting;Economics,Financial Analysis;Statistical Reasoning;Decision Making
+CAR039,Management Consultant,Business,Business & Entrepreneurship;Economics,Critical Evaluation;Strategic Planning;Communication
+CAR040,Product Manager,Business/Technology,Technology;Business & Entrepreneurship,Leadership;Design Thinking;Stakeholder Alignment
+CAR041,Marketing Director,Business,Marketing & Brand Strategy;Business & Entrepreneurship,Strategic Planning;Creativity;Persuasion
+CAR042,Human Resources Manager,Business,Human Resources & People Operations,Active Listening;Conflict Resolution;Mentoring
+CAR043,Supply Chain Manager,Business,Supply Chain & Logistics;Business & Entrepreneurship,Operations Management;Risk Assessment;Project Management
+CAR044,Actuary,Finance,Mathematics & Statistics;Finance & Accounting,Statistical Reasoning;Risk Assessment;Quantitative Modeling
+CAR045,Corporate Lawyer,Law,Law;Business & Entrepreneurship,Contract Negotiation;Critical Evaluation;Writing
+CAR046,Business Operations Analyst,Business,Business & Entrepreneurship;Economics,Analytical Thinking;Operations Management;Data Interpretation
+CAR047,E-Commerce Specialist,Business,E-Commerce & Digital Business;Marketing & Brand Strategy,Data Interpretation;Customer Relations;Project Management
+CAR048,Public Relations Officer,Business/Media,Media & Communication;Marketing & Brand Strategy,Public Speaking;Writing;Storytelling
+CAR049,Venture Capitalist,Finance,Investments & Banking;Business & Entrepreneurship,Risk Assessment;Decision Making;Strategic Planning
+CAR050,Wealth Manager,Finance,Investments & Banking;Finance & Accounting,Customer Relations;Financial Analysis;Persuasion
+CAR051,Litigation Lawyer,Law,Law;Government & Public Service,Public Speaking;Rhetoric;Writing;Negotiation
+CAR052,Judge / Magistrate,Law,Law;Government & Public Service,Critical Evaluation;Decision Making;Attention to Detail
+CAR053,Civil Servant / IAS Officer,Government,Government & Public Service;Public Policy & Governance,Leadership;Decision Making;Strategic Planning
+CAR054,Diplomat / Foreign Service,Government,International Relations & Diplomacy;Government & Public Service,Negotiation;Cross-Cultural Sensitivity;Verbal Fluency
+CAR055,Policy Analyst,Government,Public Policy & Governance;Economics,Research;Writing;Statistical Reasoning
+CAR056,Economist,Social Science,Economics;Mathematics & Statistics,Quantitative Modeling;Statistical Reasoning;Critical Evaluation
+CAR057,Sociologist,Social Science,Sociology & Community Work;Research,Research;Interviewing;Critical Evaluation
+CAR058,Historian / Archivist,Humanities,History & Culture;Research,Research;Attention to Detail;Writing
+CAR059,Archaeologist,Humanities,Archaeology & Anthropology;History & Culture,Observation;Spatial Awareness;Research
+CAR060,Anthropologist,Humanities,Archaeology & Anthropology;Sociology & Community Work,Cross-Cultural Sensitivity;Interviewing;Observation
+CAR061,Linguist / Translator,Humanities,Languages & Literature,Translation;Verbal Fluency;Writing
+CAR062,Professor / Academic,Education,Education & Pedagogy;Research,Public Speaking;Research;Mentoring
+CAR063,School Principal / Administrator,Education,Education & Pedagogy;Leadership,Leadership;Operations Management;Conflict Resolution
+CAR064,Graphic Designer,Creative,Design & Visual Arts,Visual Composition;Typography;Creativity
+CAR065,UI/UX Designer,Creative/Technology,Design & Visual Arts;Technology,UI/UX Prototyping;Design Thinking;Empathy
+CAR066,Architect,Design/Engineering,Architecture & Built Environment;Design & Visual Arts,Spatial Aesthetics;CAD Modeling;Design Thinking
+CAR067,Interior Designer,Creative,Design & Visual Arts;Architecture & Built Environment,Spatial Aesthetics;Color Theory;Customer Relations
+CAR068,Fashion Designer,Creative,Fashion & Apparel;Design & Visual Arts,Conceptual Ideation;Visual Composition;Color Theory
+CAR069,Film Director,Media,Film & Cinematography;Media & Communication,Storytelling;Leadership;Conceptual Ideation
+CAR070,Cinematographer,Media,Film & Cinematography;Photography & Videography,Visual Composition;Technical Documentation;Creativity
+CAR071,Journalist / Reporter,Media,Journalism & Mass Media;Media & Communication,Interviewing;Writing;Verbal Fluency
+CAR072,Animator / 3D Modeler,Creative,Animation & Motion Graphics;Game Design & Interactive Media,Visual Composition;CAD Modeling;Creativity
+CAR073,Game Designer,Creative/Technology,Game Design & Interactive Media;Technology,Algorithmic Thinking;Storytelling;UI/UX Prototyping
+CAR074,Sound Engineer,Creative/Technical,Music & Audio Arts;Technology,Audio Production;Troubleshooting & Debugging;Attention to Detail
+CAR075,Content Strategist,Media,Media & Communication;Marketing & Brand Strategy,Storytelling;Data Interpretation;Copywriting
+CAR076,Commercial Photographer,Creative,Photography & Videography;Design & Visual Arts,Visual Composition;Customer Relations;Attention to Detail
+CAR077,Commercial Airline Pilot,Aviation,Aviation & Aerospace,Spatial Awareness;Decision Making;Attention to Detail
+CAR078,Air Traffic Controller,Aviation,Aviation & Aerospace,Decision Making;Attention to Detail;Spatial Awareness
+CAR079,Executive Chef,Services,Culinary Arts & Gastronomy,Creativity;Operations Management;Leadership
+CAR080,Hotel General Manager,Services,Hospitality & Tourism;Business & Entrepreneurship,Leadership;Customer Relations;Operations Management
+CAR081,Event Producer,Services,Event Planning & Management;Media & Communication,Project Management;Budgeting;Conflict Resolution
+CAR082,Sports Coach / Athletic Trainer,Services,Sports & Athletic Training;Education & Pedagogy,Leadership;Mentoring;Observation
+CAR083,Agronomist / Agricultural Scientist,Science,Agriculture;Science & Research,Research;Hypothesis Testing;Observation
+CAR084,Sustainability Consultant,Environment,Environmental Studies & Sustainability;Public Policy & Governance,Strategic Planning;Analytical Thinking;Persuasion
+CAR085,Forensic Scientist,Science,Science & Research;Law,Diagnostic Acumen;Attention to Detail;Observation
+CAR086,Urban Planner,Design/Government,Architecture & Built Environment;Public Policy & Governance,Spatial Awareness;Strategic Planning;Data Interpretation
+CAR087,Specialist / Analyst (Archaeologist - Level 87),Creative,Archaeology & Anthropology;History & Culture,Observation;Spatial Awareness;Research
+CAR088,Specialist / Analyst (Doctor / Physician - Level 88),Creative,Medicine & Healthcare;Science & Research,Diagnostic Acumen;Observation;Empathy;Decision Making
+CAR089,Specialist / Analyst (Business Operations Analyst - Level 89),Finance,Business & Entrepreneurship;Economics,Analytical Thinking;Operations Management;Data Interpretation
+CAR090,Specialist / Analyst (Urban Planner - Level 90),Business,Architecture & Built Environment;Public Policy & Governance,Spatial Awareness;Strategic Planning;Data Interpretation
+CAR091,Specialist / Analyst (Agronomist / Agricultural Scientist - Level 91),Engineering,Agriculture;Science & Research,Research;Hypothesis Testing;Observation
+CAR092,Specialist / Analyst (Air Traffic Controller - Level 92),Healthcare,Aviation & Aerospace,Decision Making;Attention to Detail;Spatial Awareness
+CAR093,Specialist / Analyst (Film Director - Level 93),Finance,Film & Cinematography;Media & Communication,Storytelling;Leadership;Conceptual Ideation
+CAR094,Specialist / Analyst (Doctor / Physician - Level 94),Services,Medicine & Healthcare;Science & Research,Diagnostic Acumen;Observation;Empathy;Decision Making
+CAR095,Specialist / Analyst (Venture Capitalist - Level 95),Business,Investments & Banking;Business & Entrepreneurship,Risk Assessment;Decision Making;Strategic Planning
+CAR096,Specialist / Analyst (Sports Coach / Athletic Trainer - Level 96),Finance,Sports & Athletic Training;Education & Pedagogy,Leadership;Mentoring;Observation
+CAR097,Specialist / Analyst (Human Resources Manager - Level 97),Technology,Human Resources & People Operations,Active Listening;Conflict Resolution;Mentoring
+CAR098,Specialist / Analyst (Radiologist - Level 98),Technology,Medicine & Healthcare;Technology,Diagnostic Acumen;Observation;Attention to Detail
+CAR099,Specialist / Analyst (Marketing Director - Level 99),Social Science,Marketing & Brand Strategy;Business & Entrepreneurship,Strategic Planning;Creativity;Persuasion
+CAR100,Specialist / Analyst (Occupational Therapist - Level 100),Engineering,Mental Health & Wellbeing;Healthcare,Empathy;Design Thinking;Active Listening
+CAR101,Specialist / Analyst (Physiotherapist - Level 101),Creative,Sports & Athletic Training;Medicine & Healthcare,Empathy;Diagnostic Acumen;Observation
+CAR102,Specialist / Analyst (Physiotherapist - Level 102),Services,Sports & Athletic Training;Medicine & Healthcare,Empathy;Diagnostic Acumen;Observation
+CAR103,Specialist / Analyst (Litigation Lawyer - Level 103),Services,Law;Government & Public Service,Public Speaking;Rhetoric;Writing;Negotiation
+CAR104,Specialist / Analyst (Automotive Engineer - Level 104),Business,Engineering,CAD Modeling;Troubleshooting & Debugging;System Architecture
+CAR105,Specialist / Analyst (Environmental Engineer - Level 105),Finance,Environmental Studies & Sustainability;Engineering,Quantitative Modeling;Research;Problem Solving
+CAR106,Specialist / Analyst (Animator / 3D Modeler - Level 106),Business,Animation & Motion Graphics;Game Design & Interactive Media,Visual Composition;CAD Modeling;Creativity
+CAR107,Specialist / Analyst (Content Strategist - Level 107),Social Science,Media & Communication;Marketing & Brand Strategy,Storytelling;Data Interpretation;Copywriting
+CAR108,Specialist / Analyst (Content Strategist - Level 108),Social Science,Media & Communication;Marketing & Brand Strategy,Storytelling;Data Interpretation;Copywriting
+CAR109,Specialist / Analyst (E-Commerce Specialist - Level 109),Finance,E-Commerce & Digital Business;Marketing & Brand Strategy,Data Interpretation;Customer Relations;Project Management
+CAR110,Specialist / Analyst (Environmental Engineer - Level 110),Services,Environmental Studies & Sustainability;Engineering,Quantitative Modeling;Research;Problem Solving
+CAR111,Specialist / Analyst (Mechanical Engineer - Level 111),Technology,Engineering,CAD Modeling;Spatial Awareness;Problem Solving
+CAR112,Specialist / Analyst (Aerospace Engineer - Level 112),Healthcare,Aviation & Aerospace;Engineering,Quantitative Modeling;Spatial Awareness;Problem Solving
+CAR113,Specialist / Analyst (Event Producer - Level 113),Healthcare,Event Planning & Management;Media & Communication,Project Management;Budgeting;Conflict Resolution
+CAR114,Specialist / Analyst (Policy Analyst - Level 114),Engineering,Public Policy & Governance;Economics,Research;Writing;Statistical Reasoning
+CAR115,Specialist / Analyst (Wealth Manager - Level 115),Social Science,Investments & Banking;Finance & Accounting,Customer Relations;Financial Analysis;Persuasion
+CAR116,Specialist / Analyst (Commercial Airline Pilot - Level 116),Services,Aviation & Aerospace,Spatial Awareness;Decision Making;Attention to Detail
+CAR117,Specialist / Analyst (Fashion Designer - Level 117),Business,Fashion & Apparel;Design & Visual Arts,Conceptual Ideation;Visual Composition;Color Theory
+CAR118,Specialist / Analyst (Journalist / Reporter - Level 118),Technology,Journalism & Mass Media;Media & Communication,Interviewing;Writing;Verbal Fluency
+CAR119,Specialist / Analyst (Aerospace Engineer - Level 119),Business,Aviation & Aerospace;Engineering,Quantitative Modeling;Spatial Awareness;Problem Solving
+CAR120,Specialist / Analyst (Agronomist / Agricultural Scientist - Level 120),Creative,Agriculture;Science & Research,Research;Hypothesis Testing;Observation
+CAR121,Specialist / Analyst (Aerospace Engineer - Level 121),Business,Aviation & Aerospace;Engineering,Quantitative Modeling;Spatial Awareness;Problem Solving
+CAR122,Specialist / Analyst (Economist - Level 122),Healthcare,Economics;Mathematics & Statistics,Quantitative Modeling;Statistical Reasoning;Critical Evaluation
+CAR123,Specialist / Analyst (Archaeologist - Level 123),Technology,Archaeology & Anthropology;History & Culture,Observation;Spatial Awareness;Research
+CAR124,Specialist / Analyst (Nutritionist / Dietitian - Level 124),Healthcare,Nutrition & Dietetics;Healthcare,Active Listening;Communication;Analytical Thinking
+CAR125,Specialist / Analyst (UI/UX Designer - Level 125),Engineering,Design & Visual Arts;Technology,UI/UX Prototyping;Design Thinking;Empathy
+CAR126,Specialist / Analyst (Event Producer - Level 126),Business,Event Planning & Management;Media & Communication,Project Management;Budgeting;Conflict Resolution
+CAR127,Specialist / Analyst (Sports Coach / Athletic Trainer - Level 127),Finance,Sports & Athletic Training;Education & Pedagogy,Leadership;Mentoring;Observation
+CAR128,Specialist / Analyst (Mechatronics Specialist - Level 128),Creative,Robotics & Automation;Engineering,Robotics Programming;Circuit Design;Problem Solving
+CAR129,Specialist / Analyst (Doctor / Physician - Level 129),Technology,Medicine & Healthcare;Science & Research,Diagnostic Acumen;Observation;Empathy;Decision Making
+CAR130,Specialist / Analyst (Commercial Airline Pilot - Level 130),Creative,Aviation & Aerospace,Spatial Awareness;Decision Making;Attention to Detail
+CAR131,Specialist / Analyst (School Principal / Administrator - Level 131),Technology,Education & Pedagogy;Leadership,Leadership;Operations Management;Conflict Resolution
+CAR132,Specialist / Analyst (Aerospace Engineer - Level 132),Creative,Aviation & Aerospace;Engineering,Quantitative Modeling;Spatial Awareness;Problem Solving
+CAR133,Specialist / Analyst (Product Manager - Level 133),Finance,Technology;Business & Entrepreneurship,Leadership;Design Thinking;Stakeholder Alignment
+CAR134,Specialist / Analyst (Full-Stack Web Developer - Level 134),Finance,Technology,Programming;Database Management;Problem Solving
+CAR135,Specialist / Analyst (Game Designer - Level 135),Engineering,Game Design & Interactive Media;Technology,Algorithmic Thinking;Storytelling;UI/UX Prototyping
+CAR136,Specialist / Analyst (Robotics Engineer - Level 136),Services,Robotics & Automation;Engineering,Robotics Programming;Circuit Design;Problem Solving
+CAR137,Specialist / Analyst (Database Administrator - Level 137),Healthcare,Technology;Mathematics & Statistics,Database Management;Attention to Detail;Troubleshooting & Debugging
+CAR138,Specialist / Analyst (Biomedical Engineer - Level 138),Services,Engineering;Medicine & Healthcare,Diagnostic Acumen;Design Thinking;Circuit Design
+CAR139,Specialist / Analyst (Journalist / Reporter - Level 139),Healthcare,Journalism & Mass Media;Media & Communication,Interviewing;Writing;Verbal Fluency
+CAR140,Specialist / Analyst (Nutritionist / Dietitian - Level 140),Social Science,Nutrition & Dietetics;Healthcare,Active Listening;Communication;Analytical Thinking
+CAR141,Specialist / Analyst (Physiotherapist - Level 141),Finance,Sports & Athletic Training;Medicine & Healthcare,Empathy;Diagnostic Acumen;Observation
+CAR142,Specialist / Analyst (Product Manager - Level 142),Social Science,Technology;Business & Entrepreneurship,Leadership;Design Thinking;Stakeholder Alignment
+CAR143,Specialist / Analyst (Urban Planner - Level 143),Creative,Architecture & Built Environment;Public Policy & Governance,Spatial Awareness;Strategic Planning;Data Interpretation
+CAR144,Specialist / Analyst (Sociologist - Level 144),Services,Sociology & Community Work;Research,Research;Interviewing;Critical Evaluation
+CAR145,Specialist / Analyst (Chemical Engineer - Level 145),Finance,Engineering;Science & Research,Diagnostic Acumen;Analytical Thinking;Problem Solving
+CAR146,Specialist / Analyst (Clinical Psychologist - Level 146),Engineering,Psychology;Mental Health & Wellbeing,Empathy;Active Listening;Interviewing;Critical Evaluation
+CAR147,Specialist / Analyst (Actuary - Level 147),Technology,Mathematics & Statistics;Finance & Accounting,Statistical Reasoning;Risk Assessment;Quantitative Modeling
+CAR148,Specialist / Analyst (Commercial Photographer - Level 148),Finance,Photography & Videography;Design & Visual Arts,Visual Composition;Customer Relations;Attention to Detail
+CAR149,Specialist / Analyst (Commercial Photographer - Level 149),Finance,Photography & Videography;Design & Visual Arts,Visual Composition;Customer Relations;Attention to Detail
+CAR150,Specialist / Analyst (Software Engineer - Level 150),Engineering,Technology;Engineering,Logical Thinking;Problem Solving;Programming
+CAR151,Specialist / Analyst (Event Producer - Level 151),Technology,Event Planning & Management;Media & Communication,Project Management;Budgeting;Conflict Resolution
+CAR152,Specialist / Analyst (Radiologist - Level 152),Engineering,Medicine & Healthcare;Technology,Diagnostic Acumen;Observation;Attention to Detail
+CAR153,Specialist / Analyst (DevOps Engineer - Level 153),Creative,Technology;Engineering,System Administration;Troubleshooting & Debugging;Programming
+CAR154,Specialist / Analyst (Computer Systems Analyst - Level 154),Finance,Technology;Business & Entrepreneurship,Analytical Thinking;Communication;System Architecture
+CAR155,Specialist / Analyst (Chartered Accountant - Level 155),Services,Finance & Accounting;Business & Entrepreneurship,Numerical Ability;Financial Analysis;Attention to Detail
+CAR156,Specialist / Analyst (Physiotherapist - Level 156),Healthcare,Sports & Athletic Training;Medicine & Healthcare,Empathy;Diagnostic Acumen;Observation
+CAR157,Specialist / Analyst (Sound Engineer - Level 157),Services,Music & Audio Arts;Technology,Audio Production;Troubleshooting & Debugging;Attention to Detail
+CAR158,Specialist / Analyst (Epidemiologist - Level 158),Services,Public Health;Mathematics & Statistics,Statistical Reasoning;Research;Critical Evaluation
+CAR159,Specialist / Analyst (Civil Servant / IAS Officer - Level 159),Finance,Government & Public Service;Public Policy & Governance,Leadership;Decision Making;Strategic Planning
+CAR160,Specialist / Analyst (Civil Engineer - Level 160),Engineering,Engineering;Architecture & Built Environment,CAD Modeling;Quantitative Modeling;Project Management
+CAR161,Specialist / Analyst (Forensic Scientist - Level 161),Social Science,Science & Research;Law,Diagnostic Acumen;Attention to Detail;Observation
+CAR162,Specialist / Analyst (Business Operations Analyst - Level 162),Social Science,Business & Entrepreneurship;Economics,Analytical Thinking;Operations Management;Data Interpretation
+CAR163,Specialist / Analyst (Civil Servant / IAS Officer - Level 163),Services,Government & Public Service;Public Policy & Governance,Leadership;Decision Making;Strategic Planning
+CAR164,Specialist / Analyst (Mobile App Developer - Level 164),Engineering,Technology;Design & Visual Arts,Programming;UI/UX Prototyping;Problem Solving
+CAR165,Specialist / Analyst (Full-Stack Web Developer - Level 165),Social Science,Technology,Programming;Database Management;Problem Solving
+CAR166,Specialist / Analyst (Actuary - Level 166),Engineering,Mathematics & Statistics;Finance & Accounting,Statistical Reasoning;Risk Assessment;Quantitative Modeling
+CAR167,Specialist / Analyst (Epidemiologist - Level 167),Finance,Public Health;Mathematics & Statistics,Statistical Reasoning;Research;Critical Evaluation
+CAR168,Specialist / Analyst (Biotechnologist - Level 168),Services,Biotechnology & Genetics;Science & Research,Research;Hypothesis Testing;Observation
+CAR169,Specialist / Analyst (Environmental Engineer - Level 169),Social Science,Environmental Studies & Sustainability;Engineering,Quantitative Modeling;Research;Problem Solving
+CAR170,Specialist / Analyst (Pharmacist - Level 170),Business,Pharmacy & Pharmacology;Chemistry,Attention to Detail;Research;Customer Relations
+CAR171,Specialist / Analyst (Anthropologist - Level 171),Finance,Archaeology & Anthropology;Sociology & Community Work,Cross-Cultural Sensitivity;Interviewing;Observation
+CAR172,Specialist / Analyst (Computer Systems Analyst - Level 172),Services,Technology;Business & Entrepreneurship,Analytical Thinking;Communication;System Architecture
+CAR173,Specialist / Analyst (Journalist / Reporter - Level 173),Engineering,Journalism & Mass Media;Media & Communication,Interviewing;Writing;Verbal Fluency
+CAR174,Specialist / Analyst (Mobile App Developer - Level 174),Technology,Technology;Design & Visual Arts,Programming;UI/UX Prototyping;Problem Solving
+CAR175,Specialist / Analyst (Mechanical Engineer - Level 175),Finance,Engineering,CAD Modeling;Spatial Awareness;Problem Solving
+CAR176,Specialist / Analyst (Surgeon - Level 176),Social Science,Medicine & Healthcare,Attention to Detail;Decision Making;Diagnostic Acumen
+CAR177,Specialist / Analyst (School Principal / Administrator - Level 177),Services,Education & Pedagogy;Leadership,Leadership;Operations Management;Conflict Resolution
+CAR178,Specialist / Analyst (Physiotherapist - Level 178),Social Science,Sports & Athletic Training;Medicine & Healthcare,Empathy;Diagnostic Acumen;Observation
+CAR179,Specialist / Analyst (Full-Stack Web Developer - Level 179),Healthcare,Technology,Programming;Database Management;Problem Solving
+CAR180,Specialist / Analyst (Venture Capitalist - Level 180),Technology,Investments & Banking;Business & Entrepreneurship,Risk Assessment;Decision Making;Strategic Planning
+CAR181,Specialist / Analyst (Wealth Manager - Level 181),Business,Investments & Banking;Finance & Accounting,Customer Relations;Financial Analysis;Persuasion
+CAR182,Specialist / Analyst (Archaeologist - Level 182),Business,Archaeology & Anthropology;History & Culture,Observation;Spatial Awareness;Research
+CAR183,Specialist / Analyst (Policy Analyst - Level 183),Services,Public Policy & Governance;Economics,Research;Writing;Statistical Reasoning
+CAR184,Specialist / Analyst (Mechatronics Specialist - Level 184),Finance,Robotics & Automation;Engineering,Robotics Programming;Circuit Design;Problem Solving
+CAR185,Specialist / Analyst (Financial Analyst - Level 185),Finance,Finance & Accounting;Economics,Financial Analysis;Statistical Reasoning;Decision Making
+CAR186,Specialist / Analyst (Full-Stack Web Developer - Level 186),Technology,Technology,Programming;Database Management;Problem Solving
+CAR187,Specialist / Analyst (Marketing Director - Level 187),Technology,Marketing & Brand Strategy;Business & Entrepreneurship,Strategic Planning;Creativity;Persuasion
+CAR188,Specialist / Analyst (Mobile App Developer - Level 188),Services,Technology;Design & Visual Arts,Programming;UI/UX Prototyping;Problem Solving
+CAR189,Specialist / Analyst (UI/UX Designer - Level 189),Healthcare,Design & Visual Arts;Technology,UI/UX Prototyping;Design Thinking;Empathy
+CAR190,Specialist / Analyst (Full-Stack Web Developer - Level 190),Engineering,Technology,Programming;Database Management;Problem Solving
+CAR191,Specialist / Analyst (Pharmacist - Level 191),Engineering,Pharmacy & Pharmacology;Chemistry,Attention to Detail;Research;Customer Relations
+CAR192,Specialist / Analyst (Commercial Airline Pilot - Level 192),Engineering,Aviation & Aerospace,Spatial Awareness;Decision Making;Attention to Detail
+CAR193,Specialist / Analyst (Veterinarian - Level 193),Social Science,Veterinary Sciences;Medicine & Healthcare,Diagnostic Acumen;Observation;Empathy
+CAR194,Specialist / Analyst (Chemical Engineer - Level 194),Finance,Engineering;Science & Research,Diagnostic Acumen;Analytical Thinking;Problem Solving
+CAR195,Specialist / Analyst (Content Strategist - Level 195),Technology,Media & Communication;Marketing & Brand Strategy,Storytelling;Data Interpretation;Copywriting
+CAR196,Specialist / Analyst (Hotel General Manager - Level 196),Engineering,Hospitality & Tourism;Business & Entrepreneurship,Leadership;Customer Relations;Operations Management
+CAR197,Specialist / Analyst (Diplomat / Foreign Service - Level 197),Creative,International Relations & Diplomacy;Government & Public Service,Negotiation;Cross-Cultural Sensitivity;Verbal Fluency
+CAR198,Specialist / Analyst (Nutritionist / Dietitian - Level 198),Finance,Nutrition & Dietetics;Healthcare,Active Listening;Communication;Analytical Thinking
+CAR199,Specialist / Analyst (Urban Planner - Level 199),Creative,Architecture & Built Environment;Public Policy & Governance,Spatial Awareness;Strategic Planning;Data Interpretation
+CAR200,Specialist / Analyst (Veterinarian - Level 200),Business,Veterinary Sciences;Medicine & Healthcare,Diagnostic Acumen;Observation;Empathy

@@ -1,0 +1,77 @@
+skill_id,skill_name,category
+SK001,Logical Thinking,Analytical
+SK002,Problem Solving,Analytical
+SK003,Numerical Ability,Analytical
+SK004,Analytical Thinking,Analytical
+SK005,Observation,Analytical
+SK006,Research,Analytical
+SK007,Statistical Reasoning,Analytical
+SK008,Spatial Awareness,Analytical
+SK009,Data Interpretation,Analytical
+SK010,Critical Evaluation,Analytical
+SK011,Hypothesis Testing,Analytical
+SK012,System Architecture,Analytical
+SK013,Quantitative Modeling,Analytical
+SK014,Algorithmic Thinking,Analytical
+SK015,Pattern Recognition,Analytical
+SK016,Diagnostic Acumen,Analytical
+SK017,Financial Analysis,Analytical
+SK018,Communication,Interpersonal
+SK019,Public Speaking,Interpersonal
+SK020,Leadership,Interpersonal
+SK021,Teamwork,Interpersonal
+SK022,Empathy,Interpersonal
+SK023,Negotiation,Interpersonal
+SK024,Active Listening,Interpersonal
+SK025,Conflict Resolution,Interpersonal
+SK026,Mentoring,Interpersonal
+SK027,Persuasion,Interpersonal
+SK028,Cross-Cultural Sensitivity,Interpersonal
+SK029,Interviewing,Interpersonal
+SK030,Customer Relations,Interpersonal
+SK031,Facilitation,Interpersonal
+SK032,Writing,Language & Communication
+SK033,Verbal Fluency,Language & Communication
+SK034,Storytelling,Language & Communication
+SK035,Technical Documentation,Language & Communication
+SK036,Translation,Language & Communication
+SK037,Copywriting,Language & Communication
+SK038,Editing & Proofreading,Language & Communication
+SK039,Rhetoric,Language & Communication
+SK040,Scriptwriting,Language & Communication
+SK041,Creativity,Creative
+SK042,Design Thinking,Creative
+SK043,Visual Composition,Creative
+SK044,Color Theory,Creative
+SK045,Typography,Creative
+SK046,Conceptual Ideation,Creative
+SK047,Illustration,Creative
+SK048,UI/UX Prototyping,Creative
+SK049,Spatial Aesthetics,Creative
+SK050,Audio Production,Creative
+SK051,Technology Aptitude,Technical
+SK052,Troubleshooting & Debugging,Technical
+SK053,Programming,Technical
+SK054,Database Management,Technical
+SK055,Network Engineering,Technical
+SK056,System Administration,Technical
+SK057,Version Control,Technical
+SK058,Cloud Infrastructure,Technical
+SK059,Circuit Design,Technical
+SK060,CAD Modeling,Technical
+SK061,Machine Learning Pipeline,Technical
+SK062,Cybersecurity Auditing,Technical
+SK063,Robotics Programming,Technical
+SK064,Hardware Diagnostics,Technical
+SK065,Attention to Detail,Professional & Business
+SK066,Decision Making,Professional & Business
+SK067,Entrepreneurial Thinking,Professional & Business
+SK068,Risk Assessment,Professional & Business
+SK069,Project Management,Professional & Business
+SK070,Strategic Planning,Professional & Business
+SK071,Time Management,Professional & Business
+SK072,Budgeting,Professional & Business
+SK073,Operations Management,Professional & Business
+SK074,Compliance & Ethics,Professional & Business
+SK075,Contract Negotiation,Professional & Business
+SK076,Stakeholder Alignment,Professional & Business

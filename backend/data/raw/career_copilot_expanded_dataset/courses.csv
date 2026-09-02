@@ -1,0 +1,105 @@
+course_id,course_name,stream_id,typical_subjects
+C001,Science - PCM with Computer Science,S01,Mathematics; Physics; Chemistry; Computer Science
+C002,Science - PCM with Informatics Practices,S01,Mathematics; Physics; Chemistry; Informatics Practices
+C003,Science - PCM with Applied Mathematics,S01,Applied Mathematics; Physics; Chemistry; Computer Science
+C004,Science - PCM with Engineering Graphics,S01,Mathematics; Physics; Chemistry; Engineering Graphics
+C005,Science - PCM with Physical Education,S01,Mathematics; Physics; Chemistry; Physical Education
+C006,Science - PCM with Artificial Intelligence,S01,Mathematics; Physics; Chemistry; Artificial Intelligence
+C007,Science - PCB with Biotechnology,S02,Biology; Chemistry; Physics; Biotechnology
+C008,Science - PCB with Psychology,S02,Biology; Chemistry; Physics; Psychology
+C009,Science - PCB with Home Science,S02,Biology; Chemistry; Physics; Home Science
+C010,Science - PCB with Environmental Science,S02,Biology; Chemistry; Physics; Environmental Science
+C011,Science - PCMB General,S03,Biology; Chemistry; Physics; Mathematics
+C012,Science - PCMB with Computer Science,S03,Biology; Chemistry; Physics; Mathematics; Computer Science
+C013,Science - PCMB with Economics,S03,Biology; Chemistry; Physics; Mathematics; Economics
+C014,Commerce with Core Mathematics,S04,Accountancy; Economics; Business Studies; Mathematics
+C015,Commerce with Applied Mathematics,S04,Accountancy; Economics; Business Studies; Applied Mathematics
+C016,Commerce with Statistics & Informatics,S04,Accountancy; Economics; Statistics; Informatics Practices
+C017,Commerce with Economics & Financial Markets,S04,Accountancy; Economics; Banking & Insurance; Applied Mathematics
+C018,Commerce General without Math,S05,Accountancy; Economics; Business Studies; Entrepreneurship
+C019,Commerce with Marketing & Sales,S05,Accountancy; Business Studies; Marketing & Sales; English Language & Literature
+C020,Commerce with Legal Studies,S05,Accountancy; Business Studies; Legal Studies; Economics
+C021,Commerce with Retail Operations,S05,Accountancy; Business Studies; Retail Operations; E-Commerce
+C022,Humanities - Core Social Sciences,S06,History; Political Science; Geography; English Language & Literature
+C023,Humanities with Psychology & Sociology,S06,Psychology; Sociology; Political Science; English Language & Literature
+C024,Humanities with Economics & History,S06,Economics; History; Political Science; English Language & Literature
+C025,Humanities with Philosophy & Literature,S06,Philosophy; History; English Language & Literature; Sociology
+C026,Humanities with Foreign Languages,S06,French; German; History; Political Science
+C027,Applied Arts - Visual Arts & Design,S07,Fine Arts; Commercial Arts; Graphic Design; English Language & Literature
+C028,Applied Arts - Digital Animation & VFX,S07,Animation & VFX; Graphic Design; Computer Science; Fine Arts
+C029,Applied Arts - Fashion & Textile Design,S07,Fashion Studies; Textile Design; Fine Arts; Entrepreneurship
+C030,Vocational - Software & Web Development,S08,Computer Science; Web Development; Applied Mathematics; English Language & Literature
+C031,Vocational - Electronics & Mechatronics,S08,Electronics; Robotics; Applied Mathematics; Physics
+C032,Vocational - Automobile & Mechanical,S08,Automobile Technology; Engineering Graphics; Applied Mathematics; Physics
+C033,Agriculture - Agronomy & Horticulture,S09,Agriculture; Biology; Chemistry; Environmental Science
+C034,Agriculture - Agribusiness & Rural Tech,S09,Agriculture; Economics; Business Studies; Biology
+C035,Legal Studies - Pre-Law Foundation,S10,Legal Studies; Political Science; History; English Language & Literature
+C036,Legal Studies - Law & Commerce,S10,Legal Studies; Accountancy; Economics; Business Studies
+C037,Allied Health - Paramedical Foundations,S11,Biology; Chemistry; Medical Diagnostics; Community Health
+C038,Allied Health - Physiotherapy & Sports,S11,Biology; Physical Education; Physiotherapy Basics; Nutrition & Dietetics
+C039,Media - Journalism & Mass Comm,S12,Mass Media Studies; English Language & Literature; Political Science; Sociology
+C040,Media - Digital Film & Sound,S12,Mass Media Studies; Film Studies; Sound Engineering; Creative Writing
+C041,Science - PCB with Psychology (Specialization 41),S02,Biology; Chemistry; Physics; Psychology
+C042,Science - PCM with Informatics Practices (Specialization 42),S01,Mathematics; Physics; Chemistry; Informatics Practices
+C043,Commerce General without Math (Specialization 43),S05,Accountancy; Economics; Business Studies; Entrepreneurship
+C044,Commerce with Statistics & Informatics (Specialization 44),S04,Accountancy; Economics; Statistics; Informatics Practices
+C045,Commerce with Applied Mathematics (Specialization 45),S04,Accountancy; Economics; Business Studies; Applied Mathematics
+C046,Science - PCB with Home Science (Specialization 46),S02,Biology; Chemistry; Physics; Home Science
+C047,Science - PCB with Biotechnology (Specialization 47),S02,Biology; Chemistry; Physics; Biotechnology
+C048,Legal Studies - Pre-Law Foundation (Specialization 48),S10,Legal Studies; Political Science; History; English Language & Literature
+C049,Science - PCM with Artificial Intelligence (Specialization 49),S01,Mathematics; Physics; Chemistry; Artificial Intelligence
+C050,Allied Health - Physiotherapy & Sports (Specialization 50),S11,Biology; Physical Education; Physiotherapy Basics; Nutrition & Dietetics
+C051,Applied Arts - Digital Animation & VFX (Specialization 51),S07,Animation & VFX; Graphic Design; Computer Science; Fine Arts
+C052,Science - PCM with Applied Mathematics (Specialization 52),S01,Applied Mathematics; Physics; Chemistry; Computer Science
+C053,Science - PCM with Informatics Practices (Specialization 53),S01,Mathematics; Physics; Chemistry; Informatics Practices
+C054,Science - PCM with Artificial Intelligence (Specialization 54),S01,Mathematics; Physics; Chemistry; Artificial Intelligence
+C055,Commerce with Core Mathematics (Specialization 55),S04,Accountancy; Economics; Business Studies; Mathematics
+C056,Commerce with Applied Mathematics (Specialization 56),S04,Accountancy; Economics; Business Studies; Applied Mathematics
+C057,Agriculture - Agronomy & Horticulture (Specialization 57),S09,Agriculture; Biology; Chemistry; Environmental Science
+C058,Media - Journalism & Mass Comm (Specialization 58),S12,Mass Media Studies; English Language & Literature; Political Science; Sociology
+C059,Science - PCM with Informatics Practices (Specialization 59),S01,Mathematics; Physics; Chemistry; Informatics Practices
+C060,Legal Studies - Law & Commerce (Specialization 60),S10,Legal Studies; Accountancy; Economics; Business Studies
+C061,Science - PCMB with Economics (Specialization 61),S03,Biology; Chemistry; Physics; Mathematics; Economics
+C062,Legal Studies - Pre-Law Foundation (Specialization 62),S10,Legal Studies; Political Science; History; English Language & Literature
+C063,Applied Arts - Visual Arts & Design (Specialization 63),S07,Fine Arts; Commercial Arts; Graphic Design; English Language & Literature
+C064,Commerce with Applied Mathematics (Specialization 64),S04,Accountancy; Economics; Business Studies; Applied Mathematics
+C065,Applied Arts - Fashion & Textile Design (Specialization 65),S07,Fashion Studies; Textile Design; Fine Arts; Entrepreneurship
+C066,Allied Health - Physiotherapy & Sports (Specialization 66),S11,Biology; Physical Education; Physiotherapy Basics; Nutrition & Dietetics
+C067,Commerce General without Math (Specialization 67),S05,Accountancy; Economics; Business Studies; Entrepreneurship
+C068,Science - PCM with Computer Science (Specialization 68),S01,Mathematics; Physics; Chemistry; Computer Science
+C069,Science - PCMB General (Specialization 69),S03,Biology; Chemistry; Physics; Mathematics
+C070,Applied Arts - Digital Animation & VFX (Specialization 70),S07,Animation & VFX; Graphic Design; Computer Science; Fine Arts
+C071,Humanities - Core Social Sciences (Specialization 71),S06,History; Political Science; Geography; English Language & Literature
+C072,Commerce General without Math (Specialization 72),S05,Accountancy; Economics; Business Studies; Entrepreneurship
+C073,Science - PCB with Environmental Science (Specialization 73),S02,Biology; Chemistry; Physics; Environmental Science
+C074,Commerce with Core Mathematics (Specialization 74),S04,Accountancy; Economics; Business Studies; Mathematics
+C075,Humanities - Core Social Sciences (Specialization 75),S06,History; Political Science; Geography; English Language & Literature
+C076,Science - PCB with Biotechnology (Specialization 76),S02,Biology; Chemistry; Physics; Biotechnology
+C077,Science - PCM with Artificial Intelligence (Specialization 77),S01,Mathematics; Physics; Chemistry; Artificial Intelligence
+C078,Humanities with Philosophy & Literature (Specialization 78),S06,Philosophy; History; English Language & Literature; Sociology
+C079,Science - PCB with Biotechnology (Specialization 79),S02,Biology; Chemistry; Physics; Biotechnology
+C080,Humanities with Psychology & Sociology (Specialization 80),S06,Psychology; Sociology; Political Science; English Language & Literature
+C081,Humanities with Psychology & Sociology (Specialization 81),S06,Psychology; Sociology; Political Science; English Language & Literature
+C082,Media - Journalism & Mass Comm (Specialization 82),S12,Mass Media Studies; English Language & Literature; Political Science; Sociology
+C083,Commerce with Economics & Financial Markets (Specialization 83),S04,Accountancy; Economics; Banking & Insurance; Applied Mathematics
+C084,Science - PCM with Applied Mathematics (Specialization 84),S01,Applied Mathematics; Physics; Chemistry; Computer Science
+C085,Vocational - Software & Web Development (Specialization 85),S08,Computer Science; Web Development; Applied Mathematics; English Language & Literature
+C086,Legal Studies - Pre-Law Foundation (Specialization 86),S10,Legal Studies; Political Science; History; English Language & Literature
+C087,Science - PCB with Psychology (Specialization 87),S02,Biology; Chemistry; Physics; Psychology
+C088,Humanities with Philosophy & Literature (Specialization 88),S06,Philosophy; History; English Language & Literature; Sociology
+C089,Science - PCM with Artificial Intelligence (Specialization 89),S01,Mathematics; Physics; Chemistry; Artificial Intelligence
+C090,Legal Studies - Law & Commerce (Specialization 90),S10,Legal Studies; Accountancy; Economics; Business Studies
+C091,Commerce with Marketing & Sales (Specialization 91),S05,Accountancy; Business Studies; Marketing & Sales; English Language & Literature
+C092,Media - Digital Film & Sound (Specialization 92),S12,Mass Media Studies; Film Studies; Sound Engineering; Creative Writing
+C093,Humanities with Economics & History (Specialization 93),S06,Economics; History; Political Science; English Language & Literature
+C094,Allied Health - Paramedical Foundations (Specialization 94),S11,Biology; Chemistry; Medical Diagnostics; Community Health
+C095,Science - PCMB with Economics (Specialization 95),S03,Biology; Chemistry; Physics; Mathematics; Economics
+C096,Science - PCM with Physical Education (Specialization 96),S01,Mathematics; Physics; Chemistry; Physical Education
+C097,Science - PCM with Applied Mathematics (Specialization 97),S01,Applied Mathematics; Physics; Chemistry; Computer Science
+C098,Commerce with Applied Mathematics (Specialization 98),S04,Accountancy; Economics; Business Studies; Applied Mathematics
+C099,Commerce with Marketing & Sales (Specialization 99),S05,Accountancy; Business Studies; Marketing & Sales; English Language & Literature
+C100,Science - PCM with Artificial Intelligence (Specialization 100),S01,Mathematics; Physics; Chemistry; Artificial Intelligence
+C101,Commerce with Applied Mathematics (Specialization 101),S04,Accountancy; Economics; Business Studies; Applied Mathematics
+C102,Science - PCB with Biotechnology (Specialization 102),S02,Biology; Chemistry; Physics; Biotechnology
+C103,Humanities with Philosophy & Literature (Specialization 103),S06,Philosophy; History; English Language & Literature; Sociology
+C104,Commerce General without Math (Specialization 104),S05,Accountancy; Economics; Business Studies; Entrepreneurship
