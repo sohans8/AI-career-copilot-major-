@@ -1,4 +1,4 @@
-# Career Copilot 🎓✨
+# Career Forge AI 🎓✨
 
 An AI-powered career recommendation system for Class 10 students deciding their Class 11–12 academic stream. Career Copilot combines a domain rule engine with a calibrated machine learning classifier to produce explainable, uncertainty-aware stream recommendations mapped to real courses and career pathways.
 
