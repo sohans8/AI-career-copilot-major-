@@ -1,5 +1,6 @@
 import React from 'react';
-import { Home, Compass, BookOpen, GraduationCap, LogOut, Sparkles } from 'lucide-react';
+import logoImg from '../assets/logo.png';
+import { Home, Compass, BookOpen, LogOut, Sparkles } from 'lucide-react';
 
 const NAV_ITEMS = [
   { id: 'home',    label: 'Assessment',      icon: Home,    color: 'from-indigo-500 to-purple-500' },
@@ -17,19 +18,13 @@ export default function Sidebar({ activeView, setActiveView, onResetName, studen
       style={{background: 'linear-gradient(180deg, rgba(30,27,74,0.98) 0%, rgba(20,17,60,0.98) 100%)', border: '1px solid rgba(255,255,255,0.08)'}}>
 
       {/* Brand */}
-      <div className="p-6 pb-4">
-        <div className="flex items-center gap-3">
-          <div className="relative shrink-0">
-            <div className="absolute inset-0 bg-indigo-500 rounded-xl blur-md opacity-70" />
-            <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg">
-              <GraduationCap className="w-5 h-5 text-white" />
-            </div>
-          </div>
-          <div>
-            <h1 className="text-base font-black text-white tracking-tight">Career Copilot</h1>
-            <p className="text-[10px] font-semibold text-indigo-400 uppercase tracking-widest">AI Pathway Engine</p>
-          </div>
-        </div>
+      <div className="p-5 pb-3">
+        <img 
+          src={logoImg} 
+          alt="Career Copilot Logo" 
+          className="w-48 max-w-full h-auto object-contain drop-shadow-md"
+        />
+        <p className="text-[10px] font-semibold text-indigo-400 uppercase tracking-widest mt-1">AI Pathway Engine</p>
       </div>
 
       {/* Nav */}
