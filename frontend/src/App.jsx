@@ -155,7 +155,7 @@ export default function App() {
       setActiveResult(res);
       setActiveView('results');
     } catch (err) {
-      setError('Cannot reach the backend. Make sure the FastAPI server is running on http://127.0.0.1:8000.');
+      setError('Unable to reach the backend recommendation service. Please check your network connection or try again in a few seconds.');
     } finally {
       setLoading(false);
     }
