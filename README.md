@@ -1,4 +1,4 @@
-# Career Copilot 🎓
+# Career Forge AI 🎓
 
 > AI-powered academic stream & career recommendation system for Class 10 students.
 
