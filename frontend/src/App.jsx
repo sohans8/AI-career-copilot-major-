@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ArrowRight, Sparkles, Zap, Star, Brain } from 'lucide-react';
+import logoImg from './assets/logo.png';
+import { ArrowRight, Zap, Star, Brain } from 'lucide-react';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import AssessmentView from './views/AssessmentView';
@@ -46,20 +47,16 @@ function LandingScreen({ inputName, setInputName, onSubmit }) {
 
         <div className="relative bg-[#1a1740]/95 backdrop-blur-xl rounded-[32px] p-8 border border-white/10 shadow-card-dark">
           {/* Logo */}
-          <div className="flex justify-center mb-6">
-            <div className="relative">
-              <div className="absolute inset-0 bg-indigo-500 rounded-2xl blur-md opacity-60" />
-              <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg">
-                <Sparkles className="w-8 h-8 text-white" />
-              </div>
-            </div>
+          <div className="flex justify-center mb-3">
+            <img 
+              src={logoImg} 
+              alt="Career Copilot Logo" 
+              className="w-64 sm:w-72 h-auto object-contain drop-shadow-md"
+            />
           </div>
 
-          {/* Title */}
+          {/* Subtitle */}
           <div className="text-center mb-8">
-            <h1 className="text-3xl font-black text-white tracking-tight mb-1">
-              Career Copilot
-            </h1>
             <p className="text-sm font-medium text-indigo-300">
               AI-Powered Class 10 → Class 11 Pathway
             </p>
