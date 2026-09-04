@@ -1,8 +1,6 @@
-# Career Forge AI 🎓✨
+# Career Copilot 🎓
 
-An AI-powered career recommendation system for Class 10 students deciding their Class 11–12 academic stream. Career Copilot combines a domain rule engine with a calibrated machine learning classifier to produce explainable, uncertainty-aware stream recommendations mapped to real courses and career pathways.
-
----
+> AI-powered academic stream & career recommendation system for Class 10 students.
 
 ## Preview
 
@@ -10,121 +8,123 @@ An AI-powered career recommendation system for Class 10 students deciding their 
 
 ---
 
-## Table of Contents
+## Live Deployment
 
-- [Overview](#overview)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [Dataset Catalog](#dataset-catalog)
-- [Recommendation Engine](#recommendation-engine)
-- [ML Pipeline](#ml-pipeline)
-- [API Reference](#api-reference)
-- [Getting Started](#getting-started)
-  - [Backend Setup](#backend-setup)
-  - [Frontend Setup](#frontend-setup)
-- [Environment Variables](#environment-variables)
-- [Deployment](#deployment)
-- [Robustness & Testing](#robustness--testing)
-- [Known Limitations](#known-limitations)
+| Service | URL | Status |
+|---|---|---|
+| **Frontend** (Netlify) | *(your Netlify URL)* | React SPA |
+| **Backend API** (Render) | https://career-copilot-api-9591.onrender.com | ✅ Live |
+| **API Health Check** | https://career-copilot-api-9591.onrender.com/api/v1/health | `{"status":"ok"}` |
+| **API Docs (Swagger)** | https://career-copilot-api-9591.onrender.com/docs | Interactive |
+
+> The backend is deployed on Render's free tier. First request after inactivity may take 30–60 seconds to wake up — this is expected.
 
 ---
 
 ## Overview
 
-Career Copilot helps students navigate the critical Class 10 → Class 11 transition by analyzing their favourite subjects, skills, and interests and recommending the most suitable academic stream from 12 options (Science PCM, Commerce, Humanities, Fine Arts, Vocational, and more).
-
-The system returns a ranked list of top-3 streams, a match score, an uncertainty rating, aligned courses and careers, and adaptive follow-up questions when the recommendation is ambiguous.
+Career Copilot helps students navigate the critical Class 10 → Class 11 transition. A student enters their favourite subjects, key skills, and areas of interest. The hybrid AI engine scores all 12 academic streams and returns a ranked recommendation with match scores, mapped courses, career pathways, and targeted follow-up questions when the result is ambiguous.
 
 ---
 
 ## Features
 
-- **AI Stream Recommendation** — Hybrid rule + ML model scores all 12 streams against a student profile and returns a ranked top-3 list with match scores and explanations.
-- **Uncertainty Awareness** — Every recommendation carries a confidence status (`high_confidence`, `moderate_confidence`, `conflicting_evidence`, `needs_more_information`) and an uncertainty score.
-- **Adaptive Follow-up Questions** — When competing streams are close or inputs are sparse, targeted clarification questions are generated automatically.
-- **Course & Career Mapping** — The top recommended stream links directly to relevant courses and mapped career options (e.g., Software Engineer → B.Tech Computer Science → Science PCM).
-- **12 Stream Catalog** — Browse all Class 11–12 academic pathways with descriptions and domain tags.
-- **Career Explorer** — Search and filter 200+ careers across Technology, Engineering, Healthcare, Finance, Law, Creative, and more.
-- **Modern UI** — Dark glassmorphism landing screen, animated SVG score ring on results, step-based tabbed assessment form, color-coded stream and career cards, and a fully responsive sidebar layout.
+- **Hybrid AI Recommendation** — Combines a domain rule engine with a calibrated Logistic Regression ML model to score all 12 streams and return a ranked top-3 list
+- **Animated Results UI** — SVG score ring, match breakdown bars (subject/skill/interest), and confidence status badge
+- **Uncertainty Awareness** — Every result carries a status: `high_confidence`, `moderate_confidence`, `conflicting_evidence`, or `needs_more_information`
+- **Adaptive Follow-up Questions** — Generated when streams are closely scored or when inputs are sparse
+- **Course & Career Mapping** — Top recommended stream links to relevant courses and career options
+- **12 Stream Catalog** — Browse all Class 11–12 academic pathways with domain tags
+- **Career Explorer** — Search and filter 200+ careers across Technology, Engineering, Healthcare, Finance, Law, and Creative domains
+- **Form Validation** — Assessment enforces selection across all 3 categories (subjects + skills + interests) before submission
+- **Modern UI** — Dark glassmorphism landing screen, step-based tabbed assessment, fully responsive sidebar layout
 
 ---
 
 ## Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Frontend | React 18, Vite 6, Tailwind CSS 3, Axios, Lucide React |
-| Backend | FastAPI, Uvicorn, Pydantic v2 |
-| ML | scikit-learn (Logistic Regression, Random Forest), pandas, NumPy |
-| Deployment | Netlify (frontend), any Python host (backend) |
+| Layer | Technology | Version |
+|---|---|---|
+| Frontend | React | 18.3.1 |
+| Build Tool | Vite | 6.0.7 |
+| Styling | Tailwind CSS | 3.4.17 |
+| HTTP Client | Axios | 1.7.9 |
+| Icons | Lucide React | 0.469.0 |
+| Backend | FastAPI | 0.115.0 |
+| Server | Uvicorn | 0.30.6 |
+| Validation | Pydantic | 2.9.2 |
+| ML | scikit-learn | 1.5.2 |
+| Data | pandas | 2.2.3 |
+| Numerics | NumPy | 1.26.4 |
+| Frontend Deploy | Netlify | — |
+| Backend Deploy | Render | — |
 
 ---
 
 ## Project Structure
 
 ```
-career-copilot/
+AI-career-copilot-major-/
 ├── backend/
 │   ├── app/
-│   │   ├── main.py                     # FastAPI app entry point, CORS config
+│   │   ├── main.py                         # FastAPI app, CORS config
 │   │   ├── routes/
-│   │   │   └── recommendation.py       # POST /api/v1/recommend endpoint
+│   │   │   └── recommendation.py           # POST /api/v1/recommend
 │   │   ├── models/
-│   │   │   └── schemas.py              # Pydantic request/response schemas
-│   │   ├── services/
-│   │   │   ├── data_service.py         # CSV data loader (streams, skills, interests, etc.)
-│   │   │   └── recommendation_service.py  # Hybrid rule + ML recommendation engine
-│   │   └── utils/
+│   │   │   └── schemas.py                  # Pydantic request/response schemas
+│   │   └── services/
+│   │       ├── data_service.py             # CSV loader (8 dataset files)
+│   │       └── recommendation_service.py  # Hybrid rule + ML engine
 │   ├── data/
-│   │   └── raw/
-│   │       └── career_copilot_expanded_dataset/
-│   │           ├── streams.csv
-│   │           ├── subjects.csv
-│   │           ├── skills.csv
-│   │           ├── interests.csv
-│   │           ├── courses.csv
-│   │           ├── careers.csv
-│   │           ├── stream_recommendation_rules.csv
-│   │           └── course_career_mapping.csv
+│   │   └── raw/career_copilot_expanded_dataset/
+│   │       ├── streams.csv                 # 12 streams
+│   │       ├── subjects.csv                # 105 subjects
+│   │       ├── skills.csv                  # 76 skills
+│   │       ├── interests.csv               # 59 interests
+│   │       ├── courses.csv                 # 104 courses
+│   │       ├── careers.csv                 # 200 careers
+│   │       ├── course_career_mapping.csv
+│   │       └── stream_recommendation_rules.csv  # 1,250 rule pairs
 │   ├── ml/
+│   │   ├── models/
+│   │   │   ├── logistic_regression_model.pkl   # Trained & serialized
+│   │   │   └── random_forest_model.pkl
 │   │   ├── data/
 │   │   │   ├── generate_synthetic_dataset.py
-│   │   │   ├── synthetic_student_dataset.csv
-│   │   │   └── held_out_test_set.csv
-│   │   ├── models/
-│   │   │   ├── baseline_ml.py
-│   │   │   ├── logistic_regression_model.pkl
-│   │   │   └── random_forest_model.pkl
-│   │   ├── robustness/
-│   │   │   ├── ROBUSTNESS_REPORT.md
-│   │   │   └── RECOMMENDATION_ROBUSTNESS.md
-│   │   ├── train.py                    # Train and save ML models
-│   │   ├── evaluate.py                 # Evaluate all three systems on held-out test set
-│   │   └── README.md
+│   │   │   ├── synthetic_student_dataset.csv   # 600 profiles
+│   │   │   └── held_out_test_set.csv           # 120 profiles
+│   │   ├── train.py
+│   │   ├── evaluate.py
+│   │   └── robustness/                         # Noise experiment reports
 │   ├── tests/
-│   ├── requirements.txt
-│   └── test_data_service.py
+│   └── requirements.txt
 ├── frontend/
 │   ├── src/
-│   │   ├── App.jsx                     # Root app with name entry and view routing
-│   │   ├── views/
-│   │   │   ├── AssessmentView.jsx      # Subject / skill / interest selection form
-│   │   │   ├── ResultsView.jsx         # Recommendation results display
-│   │   │   ├── StreamsView.jsx         # 12-stream catalog browser
-│   │   │   └── CareersView.jsx         # Career explorer with search and filters
+│   │   ├── App.jsx                         # Root app, routing, landing screen
+│   │   ├── assets/logo.png                 # Official logo
 │   │   ├── components/
-│   │   │   ├── Header.jsx
-│   │   │   └── Sidebar.jsx
+│   │   │   ├── Header.jsx                  # Top bar with breadcrumb
+│   │   │   └── Sidebar.jsx                 # Navigation sidebar
+│   │   ├── views/
+│   │   │   ├── AssessmentView.jsx          # Step-tabbed assessment form
+│   │   │   ├── ResultsView.jsx             # Animated recommendation results
+│   │   │   ├── StreamsView.jsx             # 12-stream catalog
+│   │   │   └── CareersView.jsx             # Career explorer with search
 │   │   ├── data/
-│   │   │   ├── optionsData.js          # Curated subject, skill, interest chip lists
-│   │   │   └── presetProfiles.js       # Pre-built student profiles for testing
+│   │   │   ├── optionsData.js              # Subject/skill/interest chip lists
+│   │   │   └── presetProfiles.js           # Sample student profiles
 │   │   └── services/
-│   │       └── api.js                  # Axios API client
-│   ├── package.json
-│   ├── vite.config.js                  # Dev proxy to FastAPI on port 8000
-│   └── index.html
-└── netlify.toml                        # Netlify build config for SPA deployment
+│   │       └── api.js                      # Axios client → Render backend
+│   ├── .env.production                     # VITE_API_BASE_URL for Netlify
+│   ├── vite.config.js
+│   └── package.json
+├── docs/
+│   ├── PROJECT_INFO.md
+│   ├── ARCHITECTURE.md
+│   └── screenshots/
+│       └── dashboard.png
+├── netlify.toml                            # Netlify build config
+└── README.md
 ```
 
 ---
@@ -139,116 +139,73 @@ All reference data lives in `backend/data/raw/career_copilot_expanded_dataset/`.
 | `subjects.csv` | 105 | Canonical subject names |
 | `skills.csv` | 76 | Skills with category tags |
 | `interests.csv` | 59 | Interest areas with category tags |
-| `courses.csv` | 104 | Courses mapped to streams with typical subjects |
+| `courses.csv` | 104 | Courses mapped to streams |
 | `careers.csv` | 200 | Career names with domain tags |
-| `course_career_mapping.csv` | — | Course → Career relationship table |
-| `stream_recommendation_rules.csv` | 1,250 | Domain rule pairs for rule engine scoring |
+| `course_career_mapping.csv` | — | Course → Career relationships |
+| `stream_recommendation_rules.csv` | 1,250 | Domain rule pairs |
 
 ---
 
 ## Recommendation Engine
 
-The engine in `recommendation_service.py` runs three systems and blends them via adaptive hybrid scoring.
-
-### 1. Rule Engine (System A)
-Scores each stream against the student's matched subjects, skills (by category weight), and interests (by category weight). Subject match is 20%, skill match 40%, interest match 40% of the rule score.
-
-### 2. ML Classifier (System B)
-A calibrated Logistic Regression model (`CalibratedClassifierCV`) trained on 480 synthetic student profiles represented as 240-dimensional multi-hot binary feature vectors (105 subjects + 76 skills + 59 interests). Outputs per-class probabilities for all 12 streams.
-
-### 3. Adaptive Hybrid (System C)
+### System A — Rule Engine
+Scores each stream against the student's matched subjects, skills (by category weight), and interests (by category weight).
 
 ```
-S_hybrid(s) = w_rule × S_rule(s) + w_ml × (100 × P_ml(s))
+Rule Score = 0.40 × skill_match + 0.40 × interest_match + 0.20 × subject_match
 ```
 
-Dynamic weights based on input completeness:
+### System B — ML Classifier
+Calibrated Logistic Regression trained on 600 synthetic profiles. Input: 240-dimensional multi-hot binary feature vector (105 subjects + 76 skills + 59 interests). Output: class probabilities for all 12 streams.
+
+### System C — Adaptive Hybrid (production)
+
+```
+S_hybrid = w_rule × S_rule + w_ml × (P_ml × 100)
+```
 
 | Input Condition | w_rule | w_ml |
 |---|---|---|
-| Sparse / incomplete (≤ 2 total inputs or missing skills/interests) | 0.85 | 0.15 |
-| Standard complete profile | 0.50 | 0.50 |
+| Sparse / missing categories | 0.85 | 0.15 |
+| Complete profile | 0.50 | 0.50 |
 
-### Recommendation Status Logic
+### Confidence Status
 
 | Status | Trigger |
 |---|---|
-| `needs_more_information` | Total valid inputs ≤ 2, or subjects missing with ≤ 3 total |
-| `conflicting_evidence` | Rule score margin < 10 **and** ML probability margin < 0.12 |
-| `moderate_confidence` | ML margin 0.12–0.30 **or** rule margin < 20 |
-| `high_confidence` | ML margin ≥ 0.30 **and** rule margin ≥ 25 |
-
----
-
-## ML Pipeline
-
-```bash
-# 1. Generate 600-profile synthetic dataset
-python backend/ml/data/generate_synthetic_dataset.py
-
-# 2. Train Logistic Regression and Random Forest models
-python backend/ml/train.py
-
-# 3. Evaluate all three systems on the held-out test set (N=120)
-python backend/ml/evaluate.py
-```
-
-### Held-Out Benchmark (clean synthetic data, N=120)
-
-| System | Top-1 Accuracy | Top-3 Accuracy | Macro F1 |
-|---|---|---|---|
-| Rule Engine Baseline | 91.67% | 100.00% | 91.68% |
-| Pure ML (Logistic Regression) | 100.00% | 100.00% | 100.00% |
-| Hybrid Ensemble (Rule + ML) | 100.00% | 100.00% | 100.00% |
-
-> ⚠️ The 100% clean accuracy reflects deterministic synthetic data generation, not real-world student diversity. See `backend/ml/robustness/ROBUSTNESS_REPORT.md` for a full noise sensitivity analysis.
+| `high_confidence` | ML margin ≥ 0.30 and rule margin ≥ 25 |
+| `moderate_confidence` | ML margin 0.12–0.30 or rule margin < 20 |
+| `conflicting_evidence` | ML margin < 0.12 and rule margin < 10 |
+| `needs_more_information` | Total valid inputs ≤ 2 or missing categories |
 
 ---
 
 ## API Reference
 
-Base URL: `http://127.0.0.1:8000`
+**Base URL:** `https://career-copilot-api-9591.onrender.com`
 
 ### `GET /api/v1/health`
-Returns server health status.
 
-**Response**
 ```json
 { "status": "ok" }
 ```
 
----
-
 ### `POST /api/v1/recommend`
-Generates stream recommendations for a student profile.
 
-**Request Body**
+**Request:**
 ```json
 {
   "name": "Aarav Patel",
-  "subjects": ["Mathematics", "Physics", "Chemistry", "Computer Science"],
+  "subjects": ["Mathematics", "Physics", "Computer Science"],
   "skills": ["Logical Thinking", "Problem Solving", "Programming"],
   "interests": ["Technology", "Engineering"]
 }
 ```
 
-| Field | Type | Required | Description |
-|---|---|---|---|
-| `name` | string | ✅ | Student name (min 1 character) |
-| `subjects` | string[] | — | Favourite subject names |
-| `skills` | string[] | — | Skill names or IDs |
-| `interests` | string[] | — | Interest names or IDs |
-
-**Response**
+**Response:**
 ```json
 {
-  "student_profile": {
-    "name": "Aarav Patel",
-    "subjects": ["Mathematics", "Physics", "Chemistry", "Computer Science"],
-    "skills": ["Logical Thinking", "Problem Solving", "Programming"],
-    "interests": ["Technology", "Engineering"],
-    "unrecognized_inputs": { "subjects": [], "skills": [], "interests": [] }
-  },
+  "student_profile": { ... },
   "recommendation_metadata": {
     "recommendation_status": "high_confidence",
     "uncertainty_score": 0.12,
@@ -266,12 +223,7 @@ Generates stream recommendations for a student profile.
       "interest_match_score": 96.0,
       "subject_match_score": 100.0,
       "ml_probability": 0.9312,
-      "uncertainty": 0.12,
-      "recommendation_status": "high_confidence",
-      "matched_skills": ["Logical Thinking", "Problem Solving"],
-      "matched_interests": ["Technology", "Engineering"],
-      "explanation_factors": ["Strong skill alignment (2 skill(s)): Logical Thinking, Problem Solving"],
-      "recommended_courses": [...]
+      "recommended_courses": [ ... ]
     }
   ]
 }
@@ -279,42 +231,42 @@ Generates stream recommendations for a student profile.
 
 ---
 
-## Getting Started
+## Running Locally
 
 ### Prerequisites
-
 - Python 3.10+
 - Node.js 20+
-- pip
 
-### Backend Setup
-
-```bash
-# Install dependencies
-pip install -r backend/requirements.txt
-
-# Start the FastAPI server from the project root
-uvicorn backend.app.main:app --reload --host 127.0.0.1 --port 8000
-```
-
-The API will be available at `http://127.0.0.1:8000`.  
-Interactive docs: `http://127.0.0.1:8000/docs`
-
-### Frontend Setup
+### Frontend only (recommended — uses live Render backend)
 
 ```bash
 cd frontend
-
-# Install dependencies
 npm install
-
-# Start the dev server (proxies /api to localhost:8000)
 npm run dev
 ```
 
-The app will open at `http://localhost:5173`.
+Open `http://localhost:5173` — the frontend automatically connects to the live Render backend. No local Python server needed.
 
-> The Vite dev server automatically proxies all `/api` requests to `http://127.0.0.1:8000`, so no extra CORS configuration is needed during development.
+### Full local stack (optional — run backend locally too)
+
+**Terminal 1 — Backend:**
+```bash
+python -m pip install -r backend/requirements.txt
+python -m uvicorn backend.app.main:app --reload --host 127.0.0.1 --port 8000
+```
+
+**Terminal 2 — Frontend with local backend:**
+
+Create `frontend/.env.local`:
+```env
+VITE_API_BASE_URL=http://127.0.0.1:8000
+```
+
+Then:
+```bash
+cd frontend
+npm run dev
+```
 
 ---
 
@@ -322,22 +274,20 @@ The app will open at `http://localhost:5173`.
 
 ### Frontend
 
-Create `frontend/.env.local` for a custom backend URL:
+| Variable | Default | Description |
+|---|---|---|
+| `VITE_API_BASE_URL` | `https://career-copilot-api-9591.onrender.com` | Backend API base URL |
 
-```env
-VITE_API_BASE_URL=http://127.0.0.1:8000
-```
-
-If the variable is not set, the frontend defaults to `http://127.0.0.1:8000`.
+- **Local dev:** set in `frontend/.env.local`
+- **Production:** set in `frontend/.env.production` or Netlify dashboard
 
 ---
 
 ## Deployment
 
-### Frontend (Netlify)
+### Frontend — Netlify
 
-The `netlify.toml` at the project root is pre-configured:
-
+`netlify.toml` is pre-configured:
 ```toml
 [build]
   base    = "frontend"
@@ -345,22 +295,47 @@ The `netlify.toml` at the project root is pre-configured:
   publish = "dist"
 ```
 
-All SPA routes are redirected to `index.html` via a catch-all redirect rule.  
-Set `VITE_API_BASE_URL` in your Netlify environment variables to point to your deployed backend.
+Set `VITE_API_BASE_URL` in Netlify environment variables if needed. All SPA routes redirect to `index.html` automatically.
 
-### Backend
+### Backend — Render
 
-Any platform that runs Python/Uvicorn works (Railway, Render, Fly.io, etc.):
+Deployed at `https://career-copilot-api-9591.onrender.com`.
 
+To redeploy or self-host:
 ```bash
-uvicorn backend.app.main:app --host 0.0.0.0 --port 8000
+python -m uvicorn backend.app.main:app --host 0.0.0.0 --port 8000
 ```
+
+> Free tier on Render spins down after inactivity. First cold-start request may take up to 60 seconds. The API timeout on the frontend is set to 60s to handle this.
 
 ---
 
-## Robustness & Testing
+## ML Pipeline
 
-Full robustness analysis is documented in `backend/ml/robustness/`:
+```bash
+# Generate 600-profile synthetic dataset
+python backend/ml/data/generate_synthetic_dataset.py
+
+# Train and save models
+python backend/ml/train.py
+
+# Evaluate all systems on held-out test set (N=120)
+python backend/ml/evaluate.py
+```
+
+### Benchmark Results (clean synthetic data, N=120)
+
+| System | Top-1 Accuracy | Top-3 Accuracy | Macro F1 |
+|---|---|---|---|
+| Rule Engine Baseline | 91.67% | 100.00% | 91.68% |
+| Pure ML (Logistic Regression) | 100.00% | 100.00% | 100.00% |
+| Hybrid Ensemble | 100.00% | 100.00% | 100.00% |
+
+> ⚠️ The 100% clean accuracy reflects deterministic synthetic data generation. See `backend/ml/robustness/ROBUSTNESS_REPORT.md` for full noise sensitivity analysis (accuracy drops to ~80% at 30% input noise).
+
+---
+
+## Robustness Summary
 
 | Noise Level | Rule Top-1 | ML Top-1 | Hybrid Top-1 |
 |---|---|---|---|
@@ -369,13 +344,14 @@ Full robustness analysis is documented in `backend/ml/robustness/`:
 | 20% | 93.33% | 92.5% | 92.5% |
 | 30% | 81.67% | 79.17% | 80.83% |
 
-An extended 25-case edge suite covers sparse inputs, missing input categories, cross-domain conflicts, and completely invalid/unknown input values. The rule engine consistently outperforms pure ML on sparse and missing-input scenarios, which is why the hybrid shifts weight to the rule engine (0.85 / 0.15) when inputs are incomplete.
+Rule engine consistently outperforms pure ML on sparse and missing-input profiles. The hybrid weight shift (0.85 rule / 0.15 ML for sparse inputs) compensates for this.
 
 ---
 
 ## Known Limitations
 
-- **Synthetic training data** — The ML model is trained on synthetically generated profiles with fixed archetypes. Accuracy on real student data will differ. Real student feedback should be collected during production use to retrain future model versions.
-- **Fixed vocabulary** — Input values are matched against a fixed catalog. Unrecognized subject, skill, or interest names are silently dropped and listed in `unrecognized_inputs` in the response.
-- **No user accounts** — There is no authentication or persistence layer in Phase 1. Assessment results are session-only.
-- **English only** — The UI and dataset are in English.
+- **Synthetic training data** — ML model trained on synthetically generated profiles. Real-world accuracy will vary. Collecting real student feedback data is required for future model retraining.
+- **Fixed vocabulary** — Unrecognized subject/skill/interest names are silently dropped and listed in `unrecognized_inputs` in the response.
+- **No authentication** — No user accounts or result persistence in Phase 1.
+- **Render cold starts** — Free tier backend takes up to 60s on first request after inactivity.
+- **English only** — Dataset and UI are in English.
