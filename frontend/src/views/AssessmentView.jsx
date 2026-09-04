@@ -29,17 +29,30 @@ const DATA_MAP = {
 export default function AssessmentView({ studentName, onSubmit, loading }) {
   const [selected, setSelected] = useState({ subjects: [], skills: [], interests: [] });
   const [activeStep, setActiveStep] = useState(0);
+  const [validationError, setValidationError] = useState('');
 
-  const toggle = (key, item) =>
+  const toggle = (key, item) => {
+    setValidationError('');
     setSelected(prev => ({
       ...prev,
       [key]: prev[key].includes(item) ? prev[key].filter(i => i !== item) : [...prev[key], item],
     }));
+  };
 
   const totalSelected = selected.subjects.length + selected.skills.length + selected.interests.length;
 
+  const isProfileComplete = 
+    selected.subjects.length > 0 && 
+    selected.skills.length > 0 && 
+    selected.interests.length > 0;
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!selected.subjects.length || !selected.skills.length || !selected.interests.length) {
+      setValidationError('Please complete all three sections (Subjects, Skills, and Interests) before generating your recommendation.');
+      return;
+    }
+    setValidationError('');
     onSubmit({ name: studentName, ...selected });
   };
 
@@ -88,7 +101,7 @@ export default function AssessmentView({ studentName, onSubmit, loading }) {
           return (
             <button
               key={step.id}
-              onClick={() => setActiveStep(step.id)}
+              onClick={() => { setActiveStep(step.id); setValidationError(''); }}
               className={`flex items-center gap-2.5 px-5 py-3 rounded-2xl font-semibold text-sm whitespace-nowrap transition-all duration-200 shrink-0 ${
                 isActive
                   ? 'bg-slate-900 text-white shadow-lg scale-[1.02]'
@@ -158,6 +171,14 @@ export default function AssessmentView({ studentName, onSubmit, loading }) {
             </div>
           </div>
 
+          {/* Validation banner */}
+          {validationError && (
+            <div className="mx-6 mb-4 p-4 rounded-2xl bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold flex items-center justify-between">
+              <span>⚠️ {validationError}</span>
+              <button type="button" onClick={() => setValidationError('')} className="font-black text-amber-600 hover:text-amber-800 ml-2">✕</button>
+            </div>
+          )}
+
           {/* Navigation row */}
           <div className="px-6 pb-6 flex items-center justify-between gap-4">
             <div className="flex gap-1.5">
@@ -165,7 +186,7 @@ export default function AssessmentView({ studentName, onSubmit, loading }) {
                 <button
                   key={s.id}
                   type="button"
-                  onClick={() => setActiveStep(s.id)}
+                  onClick={() => { setActiveStep(s.id); setValidationError(''); }}
                   className={`h-2 rounded-full transition-all duration-300 ${
                     activeStep === s.id ? 'w-8 bg-slate-900' : 'w-2 bg-slate-200 hover:bg-slate-300'
                   }`}
@@ -176,7 +197,7 @@ export default function AssessmentView({ studentName, onSubmit, loading }) {
             {activeStep < 2 ? (
               <button
                 type="button"
-                onClick={() => setActiveStep(activeStep + 1)}
+                onClick={() => { setActiveStep(activeStep + 1); setValidationError(''); }}
                 className="flex items-center gap-2 px-5 py-2.5 rounded-2xl text-sm font-bold text-white transition-all hover:-translate-y-0.5"
                 style={{background: 'linear-gradient(135deg, #4f46e5, #7c3aed)', boxShadow: '0 4px 14px rgba(79,70,229,0.3)'}}
               >
@@ -192,15 +213,15 @@ export default function AssessmentView({ studentName, onSubmit, loading }) {
                 {loading ? (
                   <><Loader2 className="w-4 h-4 animate-spin" /> Analyzing...</>
                 ) : (
-                  <><Sparkles className="w-4 h-4" /> Get Recommendation</>
+                  <><Sparkles className="w-4 h-4" /> Generate Career Recommendation</>
                 )}
               </button>
             )}
           </div>
         </div>
 
-        {/* Summary + final submit (when all 3 done) */}
-        {totalSelected >= 3 && (
+        {/* Summary + final submit (when all 3 categories completed) */}
+        {isProfileComplete && (
           <div className="mt-4 bg-gradient-to-r from-slate-900 to-indigo-900 rounded-3xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex flex-wrap gap-3">
               {STEPS.map((s) => (
