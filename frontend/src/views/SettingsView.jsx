@@ -4,7 +4,8 @@ import { checkHealth } from '../services/api';
 
 export default function SettingsView() {
   const [apiStatus, setApiStatus] = useState('checking');
-  const [apiUrl, setApiUrl] = useState('http://127.0.0.1:8000');
+  const defaultApiUrl = import.meta.env.VITE_API_BASE_URL || 'https://career-copilot-api-9591.onrender.com';
+  const [apiUrl, setApiUrl] = useState(defaultApiUrl);
 
   const verifyApi = async () => {
     setApiStatus('checking');
@@ -43,7 +44,7 @@ export default function SettingsView() {
             </div>
             <div>
               <h3 className="text-base font-bold text-slate-900">FastAPI Backend Status</h3>
-              <p className="text-xs text-slate-500">Connected to http://127.0.0.1:8000/api/v1</p>
+              <p className="text-xs text-slate-500">Connected to {apiUrl}/api/v1</p>
             </div>
           </div>
 
