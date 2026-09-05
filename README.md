@@ -12,7 +12,7 @@
 
 | Service | URL | Status |
 |---|---|---|
-| **Frontend** (Netlify) | (https://dhruvsisodiya.netlify.app | React SPA |
+| **Frontend** (Netlify) | https://dhruvsisodiya.netlify.app | React SPA |
 | **Backend API** (Render) | https://career-copilot-api-9591.onrender.com | ✅ Live |
 | **API Health Check** | https://career-copilot-api-9591.onrender.com/api/v1/health | `{"status":"ok"}` |
 | **API Docs (Swagger)** | https://career-copilot-api-9591.onrender.com/docs | Interactive |
